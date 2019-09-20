@@ -1,13 +1,15 @@
+
+<div class="layout-container">
 <div class="container-fluid">
-  
-  <div class="row"> {# row for header #}
+  <div class="row">
     <div class="col">
-      <header role="banner">
-        {{ page.header }}
-      </header>
+        <header role="banner">
+          {{ page.header }}
+        </header>
     </div>
-  </div>  {# row close for header #}
-  
+  </div>
+</div>
+
 
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
@@ -18,42 +20,31 @@
 
   {{ page.help }}
 
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-  <div class="row"> {# row for main block #}
-    <div class="col">
-      <main role="main">
-        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <div class="layout-content">
+      {{ page.content }}
+    </div>{# /.layout-content #}
 
-        <div class="layout-content">
-          {{ page.content }}
-        </div>{# /.layout-content #}
+    {% if page.sidebar_first %}
+      <aside class="layout-sidebar-first" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
 
-        {% if page.sidebar_first %}
-          <aside class="layout-sidebar-first" role="complementary">
-            {{ page.sidebar_first }}
-          </aside>
-        {% endif %}
+    {% if page.sidebar_second %}
+      <aside class="layout-sidebar-second" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
 
-        {% if page.sidebar_second %}
-          <aside class="layout-sidebar-second" role="complementary">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
+  </main>
 
-      </main>
-    </div>
-  </div> {# row close for main block #}
+  {% if page.footer %}
+    <footer role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
 
-  
-  <div class="row">
-    <div class="col">
-        {% if page.footer %}
-          <footer role="contentinfo">
-            {{ page.footer }}
-          </footer>
-        {% endif %}
-    </div>
-  </div>
-
-
-</div>{# /.container-fluid #}
+</div>{# /.layout-container #}
