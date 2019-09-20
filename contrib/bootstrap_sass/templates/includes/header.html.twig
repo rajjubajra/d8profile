@@ -19,7 +19,7 @@
       {% endif %}
       <nav{{ navbar_attributes.removeClass('bg-primary', 'navbar-expand-lg','navbar-expand-sm').addClass('navbar-expand-xl') }}>
         {% if container_navbar %}
-        <div class="container">
+        <div class="container-fluid">
         {% endif %}
           {{ page.header }}
           {% if page.primary_menu or page.header_form %}
