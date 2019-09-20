@@ -1,17 +1,13 @@
 
 <div class="layout-container">
 
-  <header role="banner">
-      <div class="container-fluid">
-          <div class="row">
-            <div class="col">
-                {{ page.header }}
-            </div>
-          </div>
-      </div>
-  </header>
-    
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+       {%  {% include '@bootstrap_sass/templates/includes/header.html.twig' %} %}
+    </div>
+  </div>
+</div>
 
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
