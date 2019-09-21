@@ -160,7 +160,7 @@ DEMO PAGE ONE -FRONT PAGE
             height: auto;
             justify-content: center;
             align-items: center;
-            :first-child{
+            :nth-child(0){
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
@@ -168,7 +168,7 @@ DEMO PAGE ONE -FRONT PAGE
             :nth-child(1){
                 display: none;
             }
-            ::nth-child(2){
+            :nth-child(2){
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
