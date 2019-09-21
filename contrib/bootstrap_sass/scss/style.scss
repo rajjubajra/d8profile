@@ -108,7 +108,11 @@ main.front-page{
 }
 
 .demo-block{
-    .card{
-        margin: 10px;
+    .container{
+        .row{
+            display: flex;
+            justify-content: center;
+
+        }
     }
 }
