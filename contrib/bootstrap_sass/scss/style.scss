@@ -14,7 +14,6 @@ body {
 }
 
 
-
 /* COLORS 
 --------------------------------------------------*/
 
@@ -58,4 +57,21 @@ a {
 
 .slick>div {
     margin: 0 15px;
+}
+
+
+main.front-page{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .main-logo{
+        width: 150px;
+        height: auto;
+    }
+
+
+
 }
