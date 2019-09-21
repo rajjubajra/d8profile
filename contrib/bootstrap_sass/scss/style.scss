@@ -6,7 +6,7 @@ Description: Bootstrap 4 with Sass
 // import files
 @import "import";
 
-@keyframes fade_effect{
+@keyframes fdeffect{
     from{opacity: 0;}
     to{opacity: 1;}
 }
@@ -149,6 +149,8 @@ DEMO PAGE ONE -FRONT PAGE
             height: auto;
             justify-content: center;
             align-items: center;
+            animation-name: fdeffect;
+            animation-duration: 2s;
             cursor: pointer;
                 div{
                     width: 20px;
@@ -167,6 +169,8 @@ DEMO PAGE ONE -FRONT PAGE
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            animation-name: fdeffect;
+            animation-duration: 2s;
             :nth-child(1){
                 width: 20px;
                 height: 2px;
