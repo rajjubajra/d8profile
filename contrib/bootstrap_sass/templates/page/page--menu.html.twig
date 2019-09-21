@@ -3,6 +3,15 @@
 
   <div class="container">
     <div class="row">
+      <div class="close-button">
+        <div class="lines-crossed"> 
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
         <main class="menu-page" role="main">
             {{ page.primary_menu }}
@@ -23,3 +32,10 @@
   {% endif %}
 
 </div>{# /.layout-container #}
+
+<script>
+  const uiCloseIcon = document.querySelector('.line-crossed');
+  uiCloseIcon.addEventListener('click',function(){
+    window.location = '{{url('<front>')}}/profile';
+  }) 
+</script>

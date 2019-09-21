@@ -227,12 +227,31 @@ DEMO PAGE ONE -FRONT PAGE
 }
 
 
+
+/**
+MENU PAGE
+**/
+.close-button{
+    display: flex;
+    width: 100%;
+    justify-items: flex-end;
+}
+
 .menu-page{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+
     ul.navbar-nav{
         li.nav-item{
             a.nav-link{
                 font-size: 2rem;
                 color: #464444;
+                font-weight: 100;
+                letter-spacing: 5px;
+                text-transform: uppercase;
             }
         }
     }
