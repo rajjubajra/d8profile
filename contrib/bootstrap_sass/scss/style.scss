@@ -151,6 +151,31 @@ DEMO PAGE ONE -FRONT PAGE
                     margin: 1px;
                 }
         }
+
+        .line-crossed{
+            display: flex;
+            flex-direction: column;
+            width: 50px;
+            margin-right: 10px;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            :first-child{
+                width: 20px;
+                height: 2px;
+                background-color: #464444;
+            }
+            :nth-child(1){
+                display: none;
+            }
+            ::nth-child(2){
+                width: 20px;
+                height: 2px;
+                background-color: #464444;
+            }
+                
+
+        }
     }
 }
 

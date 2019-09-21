@@ -42,7 +42,8 @@
       </nav>
     {% endblock %}
     
-      <div class="three-lines">
+      {# <div class="three-lines"> #}
+      <div class="line-crossed">  
         <div></div>
         <div></div>
         <div></div>
@@ -50,6 +51,13 @@
    
   </header>
 
+  <script>
+    /** ui  **/
+    const lineNav = document.querySelector('.line-crossed');
+    lineNav.addEventListener('mouseover', function(){
+      console.log('mouse is over the block');
+    })
+  </script>
   
 
 
