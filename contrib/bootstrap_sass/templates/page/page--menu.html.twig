@@ -1,41 +1,17 @@
 
 <div class="layout-container">
 
-  <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
-    <div class="close-button">
-      <div class="close-icon"> 
-          <div></div>
-          <div></div>
-          <div></div>
-      </div>
-    </div>
-  </header>
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
-        <main role="main">
-            {{ page.primary_menu }}
-        </main>
-      </div>
-      <div class="col-md-4 col-lg-4 col-sm-12">
-          footer menu here
-      </div>
-    </div>
-  </div>
   
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
-</div>{# /.layout-container #}
-
-<script>
-  const uiCloseIcon = document.querySelector('.line-crossed');
-  uiCloseIcon.addEventListener('click',function(){
-    window.location = '{{url('<front>')}}/profile';
-  }) 
-</script>
+  
+  
+    <main class="front-page">
+  
+  {#  PRIMARY MENU #}
+    {{ page.primary_menu }}
+  
+  
+    </main>
+  
+  
+  </div>{# /.layout-container #}
+  
