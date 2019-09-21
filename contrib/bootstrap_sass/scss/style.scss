@@ -249,4 +249,11 @@ MENU PAGE
     width: 100%;
     height: 90vh;
     align-items: center;
+    justify-self: center;
+    ul{
+        display: flex;
+        li{
+            margin: 2px;
+        }
+    }
 }
