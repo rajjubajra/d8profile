@@ -150,8 +150,6 @@ DEMO PAGE ONE -FRONT PAGE
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            animation-name: fade_effect;
-            animation-duration: 1s;
                 div{
                     width: 20px;
                     height: 3px;
@@ -169,8 +167,7 @@ DEMO PAGE ONE -FRONT PAGE
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            animation-name: fade_effect;
-            animation-duration: 1s;
+            transition: transform 2s;
             :nth-child(1){
                 width: 20px;
                 height: 2px;
