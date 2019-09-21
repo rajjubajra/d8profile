@@ -196,14 +196,14 @@ DEMO PAGE ONE -FRONT PAGE
     }
 }
 
-.navbar-dark 
-{
+/*
+.navbar-dark {
     .navbar-nav{
         .nav-link {
             color: #555;
         }
     } 
-}
+} */
 
 .demo-main-block{
     display: flex;
@@ -226,3 +226,13 @@ DEMO PAGE ONE -FRONT PAGE
     }
 }
 
+
+.menu-page{
+    ul.nav-bar{
+        li.nav-item{
+            a.nav-link{
+                font-size: 2rem;
+            }
+        }
+    }
+}
