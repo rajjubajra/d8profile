@@ -167,6 +167,7 @@ DEMO PAGE ONE -FRONT PAGE
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            transition: transform 2s;
             :nth-child(1){
                 width: 20px;
                 height: 2px;
