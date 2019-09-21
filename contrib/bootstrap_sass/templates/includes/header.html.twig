@@ -56,9 +56,13 @@
     /** ui  **/
     const lineNav = document.querySelector('.three-lines');
     lineNav.addEventListener('mouseover', function(){
-      console.log('mouse is over the block');
+      lineNav.classList.remove('three-lines');
+      lineNav.classList.add('line-crossed');
+      console.log('mouse on');
     })
     lineNav.addEventListener('mouseleave',function(){
+      lineNav.classList.remove('line-crossed');
+      lineNav.classList.add('three-lines');
       console.log('mouse leave');
     })
   </script>
