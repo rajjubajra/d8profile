@@ -123,6 +123,12 @@ FRONT PAGE AFTER main div
 /**
 DEMO PAGE ONE -FRONT PAGE
 **/
+.navbar-brand{
+    img{
+        width: 40px;
+        height: auto;
+    }
+}
 .demo-main-block{
     display: flex;
     flex-direction: column;
