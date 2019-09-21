@@ -13,6 +13,9 @@ body {
     background: $white;
 }
 
+img{
+    border: none;
+}
 
 /* COLORS 
 --------------------------------------------------*/
@@ -81,6 +84,7 @@ main.front-page{
             height: auto;
             border-right: 1px solid #999;
             margin-right: 20px;
+            border: none;
         }
     }
     .main-body-block{
@@ -91,6 +95,11 @@ main.front-page{
                 padding: 5px 10px;
                 border-bottom: 1px solid #999;
                 border-radius: 30px;
+                text-decoration: none;
+                color: #999;
+                &:hover{
+                    text-decoration: none;
+                }
             }
         }
     }
