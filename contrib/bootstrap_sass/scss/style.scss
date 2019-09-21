@@ -160,15 +160,15 @@ DEMO PAGE ONE -FRONT PAGE
             height: auto;
             justify-content: center;
             align-items: center;
-            :nth-child(0){
+            :nth-child(1){
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
             }
-            :nth-child(1){
+            :nth-child(2){
                 display: none;
             }
-            :nth-child(2){
+            :nth-child(3){
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
