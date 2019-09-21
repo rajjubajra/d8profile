@@ -1,10 +1,11 @@
 
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
-
+  {# DEMO ONE FRONT-PAGE HEADER #}
+  <div class="demo-one-header">
+      {% includes '@bootstrap_sass/includes/header.thml.twig' %}
+  </div>
+  
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
 
@@ -23,7 +24,6 @@
 
     {% if page.sidebar_first %}
       <aside class="layout-sidebar-first" role="complementary">
-        <h1>DEMO PAGE ???</h1>
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
