@@ -67,9 +67,16 @@ main.front-page{
     justify-content: center;
     align-items: center;
 
-    .main-logo{
+    .main-block{
+        display: flex;
+        h1{
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         img{
-            width: 150px;
+            width: 70px;
             height: auto;
         }
     }
