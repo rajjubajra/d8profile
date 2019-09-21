@@ -123,24 +123,38 @@ FRONT PAGE AFTER main div
 /**
 DEMO PAGE ONE -FRONT PAGE
 **/
-.navbar-brand{
-    img{
-        width: 40px;
-        height: auto;
+
+.demo-one-header{
+    header{
+        display: flex;
+        justify-content: space-between;
+
+        .navbar-brand{
+            img{
+                width: 40px;
+                height: auto;
+            }
+        }
+
+        .three-lines{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+                div{
+                    width: 40px;
+                    height: 2px;
+                    background-color: #999;
+                    margin: 1px;
+                }
+        }
     }
 }
 
 
-.three-lines{
-    display: flex;
-    flex-direction: column;
-        div{
-            width: 40px;
-            height: 2px;
-            background-color: #999;
-            margin: 1px;
-        }
-}
+
 
 
 .demo-main-block{
