@@ -45,7 +45,7 @@
       
     {# <div class="line-crossed">  #}
    
-      <div href="{{url("<front>")}}/menu" class="three-lines"> 
+      <div class="three-lines"> 
         <div></div>
         <div></div>
         <div></div>
@@ -65,6 +65,9 @@
       lineNav.classList.remove('line-crossed');
       lineNav.classList.add('three-lines');
       console.log('mouse leave');
+    })
+    lineNav.addEventListener('click',function(){
+      window.location = '{{url('<front>')}}/menu';
     })
   </script>
   
