@@ -158,7 +158,7 @@ DEMO PAGE ONE -FRONT PAGE
                 }
         }
 
-        .three-lines:hover{
+        .line-crossed{
             display: flex;
             flex-direction: column;
             width: 50px;
@@ -167,12 +167,13 @@ DEMO PAGE ONE -FRONT PAGE
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: transform 2s;
             :nth-child(1){
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
                 transform: rotate(45deg);
+                position: relative;
+                top: 4px;
             }
             :nth-child(2){
                 display: none;
@@ -182,11 +183,7 @@ DEMO PAGE ONE -FRONT PAGE
                 height: 2px;
                 background-color: #464444;
                 transform: rotate(-45deg);
-                position: relative;
-                top: -4px;
             }
-                
-
         }
     }
 }
