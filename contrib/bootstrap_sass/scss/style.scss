@@ -192,9 +192,14 @@ DEMO PAGE ONE -FRONT PAGE
     }
 }
 
-
-
-
+.navbar-dark 
+{
+    .navbar-nav{
+        .nav-link {
+            color: #555;
+        }
+    } 
+}
 
 .demo-main-block{
     display: flex;
