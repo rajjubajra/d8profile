@@ -83,5 +83,16 @@ main.front-page{
             margin-right: 20px;
         }
     }
+    .main-body-block{
+        display: flex;
+        justify-content: center;
+        .main-link{
+            a{
+                padding: 5px 10px;
+                border-bottom: 1px solid #999;
+                border-radius: 30px;
+            }
+        }
+    }
 
 }
