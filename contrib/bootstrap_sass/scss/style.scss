@@ -164,6 +164,7 @@ DEMO PAGE ONE -FRONT PAGE
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
+                transform: rotate(45deg);
             }
             :nth-child(2){
                 display: none;
@@ -172,6 +173,9 @@ DEMO PAGE ONE -FRONT PAGE
                 width: 20px;
                 height: 2px;
                 background-color: #464444;
+                transform: rotate(-45deg);
+                position: relative;
+                top: -2px;
             }
                 
 
