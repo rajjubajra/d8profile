@@ -196,27 +196,7 @@ DEMO PAGE ONE -FRONT PAGE
     }
 }
 
-.demo-main-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    height: 90vh;
-    margin-right: 30px;
 
-    .demo-one-main-image{
-        img{
-            max-width: 300px;
-            height: auto;
-            width: 100%;
-        }
-    }
-    .demo-one-main-title{
-        font-weight: 100;
-        font-size: 2.5rem;
-    }
-}
 
 .horizontal-div{
     display: flex;
@@ -254,6 +234,37 @@ DEMO PAGE ONE -FRONT PAGE
             }
         }
     }
+}
+
+
+.demo-main-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 90vh;
+    margin-right: 30px;
+
+    .demo-one-main-image{
+        img{
+            max-width: 300px;
+            height: auto;
+            width: 100%;
+        }
+    }
+    .demo-one-main-title{
+        font-weight: 100;
+        font-size: 2.5rem;
+    }
+}
+
+.menu-verticle {
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 15%;
+    z-index: 100;
+    left: 0px;
 }
 
 
