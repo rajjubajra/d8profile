@@ -233,10 +233,8 @@ DEMO PAGE ONE -FRONT PAGE
     bottom: 10px;
     transform: rotate(-90deg);
     transform-origin: 0% 0%;
-    span::before{
-        content: '';
-        border: 1px solid #464444;
-        height: 10px;
+    span{
+        font-weight: 100;
     }
     ul{
         display: flex;
