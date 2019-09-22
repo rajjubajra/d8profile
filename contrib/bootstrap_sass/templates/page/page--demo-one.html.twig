@@ -129,6 +129,7 @@ const btnBranding = document.getElementById('branding');
 const btnProduct = document.getElementById('product');
 const btnBycles = document.getElementById('bicycle');
 const btnPhotography = document.getElementById('photography');
+const btnAll = document.getElementById('all');
 
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
@@ -141,11 +142,15 @@ function showHide(items){
       if(item.id === btnClicked){
         item.classList.remove('hide');
       }
+      if(item.id === 'all'){
+        item.classList.remove('hide');
+      }
     })
 }
 
 btnBranding.addEventListener('click', showHide);
 btnPhotography.addEventListener('click', showHide);
+btnProduct.addEventListener('click', showHide);
 
 
 
