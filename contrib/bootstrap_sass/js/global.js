@@ -36,7 +36,7 @@
 
 /**
  *  GALLERY PAGE - DEMO ONE
- */
+
 $(function() {
   var selectedClass = "";
   $(".filter").click(function(){
@@ -49,3 +49,5 @@ $(function() {
   }, 300);
   });
   });
+
+  */
