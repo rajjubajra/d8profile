@@ -118,20 +118,11 @@
 </div>{# /.layout-container #}
 
 <script>
-  /** IMAGES **/
+/** IMAGES **/
 const varPics = document.querySelectorAll('.pics');  
-const varBranding = document.querySelectorAll('#branding');
-const varProducts = document.querySelectorAll('#product');
-const varBycles = document.querySelectorAll('#bicycle');
-const varPhotography = document.querySelectorAll('#photography');
 
- /** NODE LIST TO ARRAY **/
+/** NODE LIST TO ARRAY **/
 const arrPics = Array.from(varPics);
-const arrBranding = Array.from(varBranding);
-const arrProducts = Array.from(varProducts);
-const arrBycles = Array.from(varBycles);
-const arrPhotography = Array.from(varPhotography);
-
 
  /** BUTTON **/
 const btnBranding = document.getElementById('btn-branding');
@@ -139,10 +130,7 @@ const btnProduct = document.getElementById('btn-product');
 const btnBycles = document.getElementById('btn-bicycle');
 const btnPhotography = document.getElementById('photography');
 
-console.log('BRANDING VAR',arrBranding);
-console.log('BRANDING BTN', btnBranding);
-
-btnBranding.addEventListener('click', function(){
+function showHide(){
   console.log('item clicked');
     arrPics.forEach(function(item){
       console.log(item);
@@ -153,7 +141,9 @@ btnBranding.addEventListener('click', function(){
         item.classList.remove('hide');
       }
     })    
-})
+}
+
+btnBranding.addEventListener('click', showHide);
 
 
 
