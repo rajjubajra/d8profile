@@ -124,19 +124,23 @@
  const varBycles = document.querySelectorAll('#bicycle');
  const varPhotography = document.querySelectorAll('#photography');
 
+ const arrBranding = Array.from(varBranding);
+
  /** BUTTON **/
  const btnBranding = document.getElementById('btn-branding');
  const btnProduct = document.getElementById('btn-product');
  const btnBycles = document.getElementById('btn-bicycle');
  const btnPhotography = document.getElementById('photography');
 
- console.log('BRANDING VAR',varBranding);
+ console.log('BRANDING VAR',arrBranding);
  console.log('BRANDING BTN', btnBranding);
 
  btnBranding.addEventListener('click', function(){
-     varBranding.forEach(function(item){
-       console.log(items);
-     })
+   console.log('item clicked');
+    arrBranding.forEach(function(item){
+      console.log(items);
+    })
+     
  })
 
 
