@@ -132,12 +132,13 @@ const btnPhotography = document.getElementById('photography');
 
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
+  const btnClicked = items.target.attributes.id.nodeValue;
     arrPics.forEach(function(item){
       console.log(item);
-      if(item.id !== 'branding'){
+      if(item.id !== btnClicked){
         item.classList.add('hide');
       }
-      if(item.id === 'branding'){
+      if(item.id === btnClicked){
         item.classList.remove('hide');
       }
     })
