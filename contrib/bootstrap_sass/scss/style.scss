@@ -278,7 +278,13 @@ DEMO PAGE ONE -FRONT PAGE
     column-count: 3;
     -webkit-column-width: 33%;
     -moz-column-width: 33%;
-    column-width: 33%; 
+    column-width: 33%;
+         img{
+            max-width: 100%;
+            height: auto;
+            box-shadow: 1px 1px 6px 2px #d4d3d3;
+            border: 1px solid #fff;
+         } 
     }
 
     .gallery .pics {
