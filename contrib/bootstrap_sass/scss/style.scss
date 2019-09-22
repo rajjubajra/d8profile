@@ -266,9 +266,13 @@ DEMO PAGE ONE -FRONT PAGE
 .menu-verticle {
     position: absolute;
     transform: rotate(90deg);
-    transform-origin: 10%;
+    transform-origin: 8.5%;
     z-index: 100;
     left: 0px;
+    button{
+        border: 1px solid #e2e2e2;
+        border-radius: 0px;
+    }
 }
 
 
