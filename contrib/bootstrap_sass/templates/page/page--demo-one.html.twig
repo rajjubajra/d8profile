@@ -55,9 +55,9 @@
       <!-- Grid column -->
       <div class="col-md-12 d-flex justify-content-center mb-5">
     
-        <button id="btn-all" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
-        <button id="btn-photography" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">Photography</button>
-        <button id="btn-branding" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">Branding</button>
+        <button id="all" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
+        <button id="photography" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">Photography</button>
+        <button id="branding" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">Branding</button>
         <button type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">Art Works</button>
     
       </div>
@@ -125,13 +125,13 @@ const varPics = document.querySelectorAll('.pics');
 const arrPics = Array.from(varPics);
 
  /** BUTTON **/
-const btnBranding = document.getElementById('btn-branding');
-const btnProduct = document.getElementById('btn-product');
-const btnBycles = document.getElementById('btn-bicycle');
+const btnBranding = document.getElementById('branding');
+const btnProduct = document.getElementById('product');
+const btnBycles = document.getElementById('bicycle');
 const btnPhotography = document.getElementById('photography');
 
 function showHide(items){
-  console.log('item clicked', items);
+  console.log('item clicked', items.target.attributes.id.nodeValue);
     arrPics.forEach(function(item){
       console.log(item);
       if(item.id !== 'branding'){
