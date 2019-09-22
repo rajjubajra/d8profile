@@ -130,8 +130,8 @@ const btnProduct = document.getElementById('btn-product');
 const btnBycles = document.getElementById('btn-bicycle');
 const btnPhotography = document.getElementById('photography');
 
-function showHide(){
-  console.log('item clicked');
+function showHide(items){
+  console.log('item clicked', items);
     arrPics.forEach(function(item){
       console.log(item);
       if(item.id !== 'branding'){
@@ -144,6 +144,7 @@ function showHide(){
 }
 
 btnBranding.addEventListener('click', showHide);
+btnProduct.addEventListener('click', showHide);
 
 
 
