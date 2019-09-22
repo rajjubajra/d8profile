@@ -146,6 +146,12 @@ btnBranding.addEventListener('click', function(){
   console.log('item clicked');
     arrPics.forEach(function(item){
       console.log(item);
+      if(item.id !== 'branding'){
+        item.classList.add('hide');
+      }
+      if(item.id === 'branding'){
+        item.classList.remove('hide');
+      }
     })    
 })
 
