@@ -225,6 +225,13 @@ DEMO PAGE ONE -FRONT PAGE
         font-size: 2.5rem;
     }
 }
+.horizontal-div{
+    padding: 10px;
+    border: 1px solid #eee;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0% 0%;
+}
 
 
 /**
