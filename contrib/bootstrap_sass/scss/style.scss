@@ -229,7 +229,8 @@ DEMO PAGE ONE -FRONT PAGE
     padding: 10px;
     border: 1px solid #eee;
     position: absolute;
-    transform: rotate(90deg);
+    top: 50%;
+    transform: rotate(-90deg);
     transform-origin: 0% 0%;
 }
 
