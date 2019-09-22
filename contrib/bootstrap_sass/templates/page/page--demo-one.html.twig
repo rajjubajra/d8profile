@@ -55,10 +55,10 @@
       <!-- Grid column -->
       <div class="col-md-12 d-flex justify-content-center mb-5">
     
-        <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
-        <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Photography</button>
-        <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Branding</button>
-        <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Art Works</button>
+        <button type="button"  class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
+        <button type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">Photography</button>
+        <button type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">Branding</button>
+        <button type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">Art Works</button>
     
       </div>
       <!-- Grid column -->
@@ -70,37 +70,37 @@
     <div class="gallery" id="gallery">
     
       <!-- Grid column -->
-      <div class="mb-3 pics animation all 2">
+      <div id="branding" class="mb-3 pics animation all 2">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
     
       <!-- Grid column -->
-      <div class="mb-3 pics animation all 1">
+      <div id="product" class="mb-3 pics animation all 1">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
     
       <!-- Grid column -->
-      <div class="mb-3 pics animation all 1">
+      <div id="product" class="mb-3 pics animation all 1">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
     
       <!-- Grid column -->
-      <div class="mb-3 pics animation all 2">
+      <div id="photography" class="mb-3 pics animation all 2">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
     
       <!-- Grid column -->
-      <div class="mb-3 pics animation all 2">
+      <div  id="product" class="mb-3 pics animation all 2">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
     
       <!-- Grid column -->
-      <div class="mb-3 pics animation all 1">
+      <div id="branding" class="mb-3 pics animation all 1">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
@@ -118,8 +118,34 @@
 </div>{# /.layout-container #}
 
 <script>
- document.addEventListener('click', function(e){
-   console.log(e.path[0]);
+  /** IMAGES **/
+ const varBranding = document.querySelectorAll('#branding');
+ const varProducts = document.querySelectorAll('#product');
+ const varBycles = document.querySelectorAll('#bicycle');
+ const varPhotography = document.querySelectorAll('#photography');
+
+ /** BUTTON **/
+ const btnBranding = document.getElementById('btn-branding');
+ const btnProduct = document.getElementById('btn-product');
+ const btnBycles = document.getElementById('btn-bicycle');
+ const btnPhotography = document.getElementById('photography');
+
+ console.log('BRANDING VAR',varBranding);
+ console.log('BRANDING BTN', btnBranding);
+
+ btnBranding.addEventListener('click', function(){
+     varBranding.forEach(function(item){
+       console.log(items);
+     })
  })
+
+
+
+
+
+
+
+
+
 
 </script>
