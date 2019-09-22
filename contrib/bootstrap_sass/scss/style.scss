@@ -250,14 +250,14 @@ DEMO PAGE ONE -FRONT PAGE
         display: flex;
         li{
             list-style: none;
+            transform: rotate(90deg);
             a{
                 margin: 3px;
-                transform: rotate(90deg);
                 color: #666;
-                    &:hover{
-                    color: #666;
-                    transform: rotate(450deg);
-                    }
+            }
+            &:hover{
+                color: #666; 
+                transform: rotate(450deg);                 
             }
         }
     }
