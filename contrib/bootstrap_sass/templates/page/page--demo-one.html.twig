@@ -51,8 +51,9 @@
 
     <!-- Grid row -->
     <div class="menu-verticle">
-
-
+      <!-- Grid column -->
+        <div class="col-md-12 d-flex justify-content-center mb-5"></div>
+      <!-- Grid column -->
       {#
       <!-- Grid column -->
       <div class="col-md-12 d-flex justify-content-center mb-5">
@@ -75,13 +76,6 @@
       </div>
       <!-- Grid column -->
       #}      
-    
-      <!-- Grid column -->
-      <div class="col-md-12 d-flex justify-content-center mb-5"></div>
-      <!-- Grid column -->
-    
-
-
     </div>
     <!-- Grid row -->
     
@@ -143,40 +137,52 @@
 const uiBottons = document.querySelector('.justify-content-center');
 console.log('button placeholder', uiBottons);
 
-const uri = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
+const uriButtons = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
 
-let h = new Headers();
-h.append('Accept', 'application/vnd.api+json');
-let req = new Request(uri, {
-  method: 'GET',
-  headers: h,
-  mode: 'cors'
-})
 
-fetch(req)
-      .then((response) => {
-        if(response.ok){
-          return response.json();
-        }else{
-          throw new Error('BAD HTTP stuff');
-        }
-      })
-      .then((jsonData)=>{
+function getTaxonomyButtons(uri){
 
-          let buttons = '';
+    let h = new Headers();
+    h.append('Accept', 'application/vnd.api+json');
+    let req = new Request(uri, {
+      method: 'GET',
+      headers: h,
+      mode: 'cors'
+    })
 
-          console.log(jsonData.data);
-          jsonData.data.map((item)=>{
-              buttons += ` <button id="${item.attributes.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
-                  ${item.attributes.name}
-                </button>`;
+
+    fetch(req)
+          .then((response) => {
+            if(response.ok){
+              return response.json();
+            }else{
+              throw new Error('BAD HTTP stuff');
+            }
+          })
+          .then((jsonData)=>{
+
+              let buttons = '';
+
+              console.log(jsonData.data);
+              jsonData.data.map((item)=>{
+                  buttons += ` <button id="${item.attributes.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
+                      ${item.attributes.name}
+                    </button>`;
+              });
+              uiBottons.innerHTML = buttons;
+                    
+          })
+          .catch((err)=>{ 
+            console.log('Error', err.message);
           });
-          uiBottons.innerHTML = buttons;
-                
-      })
-      .catch((err)=>{ 
-        console.log('Error', err.message);
-      });
+
+
+}// getTaxonomyButtons closed
+
+getTaxonomyButtons(uiBottons);
+
+
+
 
 
 
