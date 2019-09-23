@@ -133,23 +133,12 @@
 
 const url = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
 
-const getJson = (url) => {
-
-  const option = {
-    method: 'get',
-    header: new Headers({
-       Accept: application/vnd.api+json
-    })
-
-  }
-
-  return fetch(url,option)
+  fetch(url)
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => {
+    console.log(data);
+  })
   .catch(erro => console.log(err));
-}
-
-getJson(url);
 
 /** IMAGES **/
 const varPics = document.querySelectorAll('.pics');  
