@@ -150,7 +150,10 @@ fetch(req)
         }
       })
       .then((jsonData)=>{
-          console.log(JSON.stringify(jsonData));
+          let jstr = JSON.stringify(jsonData);
+          console.log(jstr);
+          console.log(JSON.parse(jstr));
+
           
       })
       .catch((err)=>{ 
