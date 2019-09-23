@@ -131,15 +131,33 @@
 
 <script>
 
-const url = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
+const uri = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
 
-  fetch(url)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data);
-    console.log(data[0].attributes);
-  })
-  .catch(erro => console.log(erro));
+let h = new Headers();
+h.append('Accept', 'application/vnd.api+json');
+let req = new Request(uri, {
+  method: 'GET',
+  headers: h,
+  mode: 'cors'
+})
+
+fetch(req)
+      .then((restponse) => {
+        if(response.ok){
+          return response.json();
+        }else{
+          throw new Error('BAD HTTP stuff');
+        }
+      })
+      .then((jsonData)=>{
+          console.log(jsonData);
+      })
+      .catch((err)=>{ 
+        console.log('Error', err.message);
+      });
+
+
+
 
 /** IMAGES **/
 const varPics = document.querySelectorAll('.pics');  
