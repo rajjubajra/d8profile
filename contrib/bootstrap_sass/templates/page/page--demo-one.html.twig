@@ -57,10 +57,7 @@
     
         <button id="all" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="all">
           All
-        </button>
-        {{ page.website_gallery_menu }}
-
-        {#        
+        </button>              
           <button id="photography" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
           Photographys
         </button>
@@ -70,7 +67,7 @@
         <button id="product" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">
           Products
         </button>
-        #}
+      
 
     
       </div>
@@ -82,10 +79,7 @@
     <!-- Grid row -->
     <div class="gallery" id="gallery">
 
-      {{ page.website_gallery }}
-
     
-      {#
       <!-- Grid column -->
       <div id="branding" class="mb-3 pics animation all 2">
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap">
@@ -121,7 +115,7 @@
         <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
       </div>
       <!-- Grid column -->
-       #}
+      
 
     </div>
     <!-- Grid row -->
@@ -136,6 +130,13 @@
 </div>{# /.layout-container #}
 
 <script>
+
+
+const response = await fetch('https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type')
+const myJson = await response.json();
+console.log(JSON.stringify(myJson));
+
+
 /** IMAGES **/
 const varPics = document.querySelectorAll('.pics');  
 
