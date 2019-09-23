@@ -134,7 +134,7 @@
 
 fetch('https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type')
 .then(response =>  response.json())
-.then( data => console.log(data));
+.then( data => console.log(data[0]));
 
 
 /** IMAGES **/
