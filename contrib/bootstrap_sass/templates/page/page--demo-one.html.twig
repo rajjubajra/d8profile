@@ -150,8 +150,8 @@ fetch(req)
         }
       })
       .then((jsonData)=>{
-          console.log(jsonData);
-          console.log(jsonData.Array[0]);
+          console.log(JSON.stringify(jsonData));
+          
       })
       .catch((err)=>{ 
         console.log('Error', err.message);
