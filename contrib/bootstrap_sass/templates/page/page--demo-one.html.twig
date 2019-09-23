@@ -131,6 +131,8 @@
 
 <script>
 
+const uiBottons = document.getElementsByClassName('justify-content-center');
+
 const uri = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
 
 let h = new Headers();
@@ -151,10 +153,15 @@ fetch(req)
       })
       .then((jsonData)=>{
 
+          let buttons = '';
+
           console.log(jsonData.data);
           jsonData.data.map((item)=>{
-              console.log(item.attributes.name);
-          })
+              buttons += ` <button id="${item.attributes.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
+                  ${item.attributes.name}
+                </button>`;
+          });
+          uiBottons.innerHTML = buttons;
                 
       })
       .catch((err)=>{ 
