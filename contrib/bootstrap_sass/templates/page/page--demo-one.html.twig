@@ -134,12 +134,10 @@
 
 <script>
 
+/** GET BUTTONS **/
 const uiBottons = document.querySelector('.justify-content-center');
-console.log('button placeholder', uiBottons);
-
+//console.log('button placeholder', uiBottons);
 const uriButtons = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
-
-
 function getTaxonomyButtons(uri){
 
     let h = new Headers();
@@ -178,8 +176,47 @@ function getTaxonomyButtons(uri){
 
 
 }// getTaxonomyButtons closed
-
 getTaxonomyButtons(uriButtons);
+
+/** GET IMAGES **/
+const uiImages = document.querySelector('#gallery');
+console.log(uiImages);
+const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery`;
+function getImages(uri){
+
+  let h = new Headers();
+  h.append('Accept', 'application/vnd.api+json');
+  let req = new Request(uri, {
+    method: 'GET',
+    headers: h,
+    mode: 'cors'
+  })
+
+
+  fetch(req)
+        .then((response) => {
+          if(response.ok){
+            return response.json();
+          }else{
+            throw new Error('BAD HTTP stuff');
+          }
+        })
+        .then((jsonData)=>{
+
+            let img = '';
+
+            console.log(jsonData.data);
+           
+            
+                  
+        })
+        .catch((err)=>{ 
+          console.log('Error', err.message);
+        });
+
+
+}// getTaxonomyButtons closed
+getImages(uriImages);
 
 
 
