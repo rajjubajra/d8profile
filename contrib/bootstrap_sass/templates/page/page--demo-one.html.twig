@@ -132,9 +132,9 @@
 <script>
 
 
-const response = fetch('https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type')
-const myJson = response.json();
-console.log(JSON.stringify(myJson));
+fetch('https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type')
+.then(response =>  response.json())
+.then( data => console.log(data));
 
 
 /** IMAGES **/
