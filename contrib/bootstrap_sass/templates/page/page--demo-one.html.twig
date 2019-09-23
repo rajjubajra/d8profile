@@ -181,7 +181,9 @@ getTaxonomyButtons(uriButtons);
 /** GET IMAGES **/
 const uiImages = document.querySelector('#gallery');
 console.log(uiImages);
-const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_image"`;
+
+const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_image,field_image.image,field_image.image.file--file&fields[field_image]=image&fields[file--file]=https://www.yellow-website.com/profile/jsonapi/node/website_gallery,https://www.yellow-website.com/profile"`;
+
 function getImages(uri){
 
   let h = new Headers();
