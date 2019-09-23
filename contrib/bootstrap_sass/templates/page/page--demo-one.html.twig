@@ -150,11 +150,9 @@ fetch(req)
         }
       })
       .then((jsonData)=>{
-          jsonData.map((item)=>{
-            console.log(item.attributes.name);
-          })
-
-          
+        
+          console.log(jsonData.data);
+                   
       })
       .catch((err)=>{ 
         console.log('Error', err.message);
