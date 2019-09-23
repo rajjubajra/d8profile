@@ -150,8 +150,7 @@ fetch(req)
         }
       })
       .then((jsonData)=>{
-           let res = JSON.parse(jsonData);
-          console.log(res.data);
+          console.log(jsonData);
       })
       .catch((err)=>{ 
         console.log('Error', err.message);
