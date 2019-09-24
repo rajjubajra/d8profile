@@ -212,12 +212,11 @@ function getImages(uri){
             console.log(jsonData);
             console.log(jsonData.data); //text data
             console.log(jsonData.included); //image data
+            console.log(jsonData.keys);
 
             let imgData = '';
 
             const  dataLength = jsonData.data.length;
-
-            
                 
                     jsonData.included.map((img, index)=>{
                     
