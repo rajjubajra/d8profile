@@ -187,6 +187,8 @@ console.log(uiImages);
 /*
 const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image`;
 */
+const uri = `/jsonapi/node/website_gallery`;
+const url = `https://www.yellow-website.com/profile`;
 const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image,field_website_gallery_image.image,field_website_gallery_image.image.file--file&fields[field_image]=image&fields[file--file]=uri,url`;
 
 function getImages(uri){
