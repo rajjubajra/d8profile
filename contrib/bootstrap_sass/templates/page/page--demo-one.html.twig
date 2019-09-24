@@ -218,7 +218,8 @@ function getImages(uri){
             jsonData.data.map((item)=> {
                 jsonData.included.map((img)=>{
                   if(img.relationships.uid.data.id === item.relationships.uid.data.id){
-                    imgData += ` ${img.attributes.uri.url}<br />`;
+                     console.log('IMAGES',img.attributes);
+                     console.log('ITEMS',item.attributes);
                   }
                 })
 
