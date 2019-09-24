@@ -218,7 +218,7 @@ function getImages(uri){
             jsonData.data.map((item)=> {
                 jsonData.included.map((img)=>{
                   if(img.relationships.uid.data.id === item.relationships.uid.data.id){
-                    imgData += `${img.attributes.uri.url}<br />`;
+                    imgData += `<img src="${window.location.hostname}/${img.attributes.uri.url}" /><br />`;
                   }
                 })
 
