@@ -218,16 +218,16 @@ function getImages(uri){
             const  dataLength = jsonData.length;
 
             jsonData.data.map((item, index)=> {
-                if(index === dataLength){return;}
-                jsonData.included.map((img)=>{
-                  if(img.relationships.uid.data.id === item.relationships.uid.data.id){
-                    imgData += `
-                    <div id="product" class="mb-3 pics animation all ${item.relationships.field_website_gallery_taxonomy.data.id}">
-                      <img class="img-fluid" src="https://${window.location.hostname}${img.attributes.uri.url}" alt="Card image cap">
-                    </div>`
-                  }
-                })
-
+                if(index < dataLength){
+                    jsonData.included.map((img)=>{
+                      if(img.relationships.uid.data.id === item.relationships.uid.data.id){
+                        imgData += `${index} - ${dataLength} <br />
+                        <div id="product" class="mb-3 pics animation all ${item.relationships.field_website_gallery_taxonomy.data.id}">
+                          <img class="img-fluid" src="https://${window.location.hostname}${img.attributes.uri.url}" alt="Card image cap">
+                        </div>`
+                      }
+                    })
+              }
             })
             uiImages.innerHTML = imgData;
 
