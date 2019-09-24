@@ -184,7 +184,10 @@ getTaxonomyButtons(uriButtons);
 const uiImages = document.querySelector('#gallery');
 console.log(uiImages);
 
+/*
 const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image`;
+*/
+const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image,field_website_gallery_image.image,field_website_gallery_image.image.file--file&fields[field_image]=image&fields[file--file]=uri,url`;
 
 function getImages(uri){
 
@@ -210,8 +213,13 @@ function getImages(uri){
             console.log(jsonData.data); //text data
             console.log(jsonData.included); //image data
 
+            const imgData = '';
+
            const withInclude = jsonData.data.concat(jsonData.included);
-           console.log(withInclude);
+           withInclude.map((item)=>{
+
+                  imgData += item.
+           })
 
             
         
