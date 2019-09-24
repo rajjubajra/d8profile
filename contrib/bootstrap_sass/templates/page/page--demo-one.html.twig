@@ -218,7 +218,7 @@ function getImages(uri){
             const  dataLength = jsonData.length;
 
             jsonData.data.map((item, index)=> {
-                if(index > dataLength){
+                
                     jsonData.included.map((img)=>{
                       if(img.relationships.uid.data.id === item.relationships.uid.data.id){
                         imgData += `${index} - ${dataLength} <br />
@@ -227,7 +227,7 @@ function getImages(uri){
                         </div>`
                       }
                     })
-              }
+              
             })
             uiImages.innerHTML = imgData;
 
