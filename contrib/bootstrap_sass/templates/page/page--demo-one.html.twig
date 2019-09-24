@@ -213,7 +213,7 @@ function getImages(uri){
             console.log(jsonData.data); //text data
             console.log(jsonData.included); //image data
 
-            const imgData = '';
+            let imgData = '';
 
             jsonData.data.map((item)=> {
                 jsonData.included.map((img)=>{
