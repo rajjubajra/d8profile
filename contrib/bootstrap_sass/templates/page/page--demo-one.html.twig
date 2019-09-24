@@ -145,7 +145,7 @@ function getTaxonomyButtons(uri){
     let req = new Request(uri, {
       method: 'GET',
       headers: h,
-      mode: 'no-cors'
+      mode: 'cors'
     })
 
 
@@ -179,6 +179,7 @@ function getTaxonomyButtons(uri){
 getTaxonomyButtons(uriButtons);
 
 
+
 /** GET IMAGES **/
 const uiImages = document.querySelector('#gallery');
 console.log(uiImages);
@@ -208,7 +209,7 @@ function getImages(uri){
 
             let img = '';
 
-            console.log(jsonData);
+            console.log(jsonData.include);
            
             
                   
@@ -220,10 +221,6 @@ function getImages(uri){
 
 }// getTaxonomyButtons closed
 getImages(uriImages);
-
-
-
-
 
 
 
