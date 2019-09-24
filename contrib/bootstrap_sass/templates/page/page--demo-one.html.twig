@@ -206,13 +206,15 @@ function getImages(uri){
           }
         })
         .then((jsonData)=>{
-
-            let img = '';
-
             console.log(jsonData);
-            console.log(jsonData.data);
-            console.log(jsonData.included);
-           
+            console.log(jsonData.data); //text data
+            console.log(jsonData.included); //image data
+
+           const withInclude = jsonData.data.concat(jsonData.included);
+           console.log(withInclude);
+
+            
+        
             
                   
         })
