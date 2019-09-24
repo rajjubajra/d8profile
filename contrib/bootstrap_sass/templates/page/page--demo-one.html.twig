@@ -222,7 +222,7 @@ function getImages(uri){
                     jsonData.included.map((img)=>{
                         if(img.relationships.uid.data.id === item.relationships.uid.data.id){
                           imgData += `${index} - ${dataLength} <br />
-                          <div id="product" class="mb-3 pics animation all ${item.relationships.field_website_gallery_taxonomy.data.id}">
+                          <div id="product" class="mb-3 pics animation all">
                             <img class="img-fluid" src="https://${window.location.hostname}${img.attributes.uri.url}" alt="Card image cap">
                           </div>`
                         }
