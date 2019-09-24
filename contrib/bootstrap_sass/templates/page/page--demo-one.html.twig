@@ -215,7 +215,10 @@ function getImages(uri){
 
             let imgData = '';
 
-            jsonData.data.map((item)=> {
+            const  dataLength = jsonData.length;
+
+            jsonData.data.map((item, index)=> {
+                if(index === dataLength){return;}
                 jsonData.included.map((img)=>{
                   if(img.relationships.uid.data.id === item.relationships.uid.data.id){
                     imgData += `
