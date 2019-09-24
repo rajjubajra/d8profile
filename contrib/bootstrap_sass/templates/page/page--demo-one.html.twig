@@ -185,7 +185,7 @@ const uiImages = document.querySelector('#gallery');
 console.log(uiImages);
 
 
-const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image`;
+const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image&field_website_gallery_taxonomy`;
 
 
 
@@ -212,7 +212,7 @@ function getImages(uri){
             console.log(jsonData);
             console.log(jsonData.data); //text data
             console.log(jsonData.included); //image data
-            console.log(jsonData.keys);
+            console.log(jsonData.key);
 
             let imgData = '';
 
