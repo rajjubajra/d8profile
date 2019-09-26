@@ -137,7 +137,7 @@
 /** GET BUTTONS **/
 const uiBottons = document.querySelector('.justify-content-center');
 //console.log('button placeholder', uiBottons);
-const uriButtons = `https://www.yellow-website.com/profile/jsonapi/taxonomy_term/website_type`;
+const uriButtons = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
 function getTaxonomyButtons(uri){
 
     let h = new Headers();
@@ -163,8 +163,8 @@ function getTaxonomyButtons(uri){
 
               console.log(jsonData.data);
               jsonData.data.map((item)=>{
-                  buttons += ` <button id="${item.attributes.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
-                      ${item.attributes.name}
+                  buttons += ` <button id="${item.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
+                      ${item.name}
                     </button>`;
               });
               uiBottons.innerHTML = buttons;
@@ -185,8 +185,7 @@ const uiImages = document.querySelector('#gallery');
 console.log(uiImages);
 
 
-const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=uid.field_website_gallery_image`;
-
+const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image`;
 
 
 function getImages(uri){
