@@ -184,9 +184,8 @@ getTaxonomyButtons(uriButtons);
 const uiImages = document.querySelector('#gallery');
 console.log(uiImages);
 
-/*
-const uriImages = `https://www.yellow-website.com/profile/jsonapi/node/website_gallery?include=field_website_gallery_image`;
 
+const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
 
 function getImages(uri){
 
@@ -198,7 +197,6 @@ function getImages(uri){
     mode: 'cors'
   })
 
-
   fetch(req)
         .then((response) => {
           if(response.ok){
@@ -209,26 +207,14 @@ function getImages(uri){
         })
         .then((jsonData)=>{
             console.log(jsonData);
-            console.log(jsonData.data); //text data
-            console.log(jsonData.included); //image data
-            console.log(jsonData.key);
-
-            let imgData = '';
-
-            const  dataLength = jsonData.data.length;
-                
-                    jsonData.included.map((img, index)=>{
-                    
-                          imgData += `${index} - ${dataLength} <br />
-                          <div id="product" class="mb-3 pics animation all">
-                            <img class="img-fluid" src="https://${window.location.hostname}${img.attributes.uri.url}" alt="Card image cap">
-                          </div>`
-                        
-                    })
+            let imgData = '';   
+            jsonData.map((img)=>{
+              imgData += `
+                <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+                  <img class="img-fluid" src="https://${window.location.hostname}${img.field_website_gallery_image}" alt="Card image cap">
+                </div>`  
+            })
             uiImages.innerHTML = imgData;
-
-
-
         })
         .catch((err)=>{ 
           console.log('Error', err.message);
@@ -237,7 +223,7 @@ function getImages(uri){
 
 }// getTaxonomyButtons closed
 getImages(uriImages);
-*/
+
 
 
 /** IMAGES **/
