@@ -158,9 +158,11 @@ function getImages(uri){
 }// getTaxonomyButtons closed
 getImages(uriImages);
 
+const varProducts = document.querySelector('#Products');
+console.log('PRODUCTS VAR : ',varProducts);
+
+
  /** BUTTON **/
-
-
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
   const btnClicked = items.target.attributes.id.nodeValue;
