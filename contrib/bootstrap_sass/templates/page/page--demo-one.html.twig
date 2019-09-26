@@ -48,82 +48,17 @@
 
 {# GALLERY PAGE #}
   <div class="container">
-
-    <!-- Grid row -->
+    <!-- Gallery nav buttons  -->       
     <div class="menu-verticle">
-      <!-- Grid column -->
         <div class="col-md-12 d-flex justify-content-center mb-5"></div>
-      <!-- Grid column -->
-      {#
-      <!-- Grid column -->
-      <div class="col-md-12 d-flex justify-content-center mb-5">
-    
-        <button id="all" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="all">
-          All
-        </button>              
-          <button id="photography" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
-          Photographys
-        </button>
-        <button id="branding" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">
-          Branding
-        </button>
-        <button id="product" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="2">
-          Products
-        </button>
-      
-
-    
-      </div>
-      <!-- Grid column -->
-      #}      
     </div>
-    <!-- Grid row -->
-    
-    <!-- Grid row -->
-    <div class="gallery" id="gallery">
-
-    
-      <!-- Grid column -->
-      <div id="branding" class="mb-3 pics animation all 2">
-        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap">
-      </div>
-      <!-- Grid column -->
-    
-      <!-- Grid column -->
-      <div id="product" class="mb-3 pics animation all 1">
-        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap">
-      </div>
-      <!-- Grid column -->
-    
-      <!-- Grid column -->
-      <div id="product" class="mb-3 pics animation all 1">
-        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap">
-      </div>
-      <!-- Grid column -->
-    
-      <!-- Grid column -->
-      <div id="photography" class="mb-3 pics animation all 2">
-        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-      </div>
-      <!-- Grid column -->
-    
-      <!-- Grid column -->
-      <div  id="product" class="mb-3 pics animation all 2">
-        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-      </div>
-      <!-- Grid column -->
-    
-      <!-- Grid column -->
-      <div id="branding" class="mb-3 pics animation all 1">
-        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
-      </div>
-      <!-- Grid column -->
-      
-
-    </div>
-    <!-- Grid row -->
+    <!-- Gallery column -->     
+    <div class="gallery" id="gallery"></div>
   </div>
 
+
+
+  
   {% if page.footer %}
     <footer role="contentinfo">
       {{ page.footer }}
