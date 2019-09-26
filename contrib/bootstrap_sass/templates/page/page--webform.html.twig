@@ -13,26 +13,26 @@
 
   {{ page.help }}
 
+
   <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content">
-      <h1>Contact Page</h1>
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
+      
+    <div class="container contact">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-left">
+            {{ page.header }}
+          </div>
+          
+        </div>
+        <div class="col-md-6">
+          <div class="contact-form">
+            <div class="form-close"><a href="{{url('<front>')}} "><i class="fas fa-times"></i></a></div>
+            {{ page.content }}
+          </div>
+          
+        </div>
+      </div>
+    </div>  
   </main>
 
   {% if page.footer %}
@@ -42,3 +42,43 @@
   {% endif %}
 
 </div>{# /.layout-container #}
+
+
+
+<script>
+
+  const vInput = document.querySelectorAll('input');
+
+  vInput.forEach(function(item){      
+
+    item.addEventListener('focus', function(){
+        const vItem = item.parentElement;
+        vItem.style.color = 'green'; 
+        item.style.border = '1px solid green';
+    })
+    item.addEventListener('focusout',function(){
+      const vItem = item.parentElement;
+      vItem.style.color = '#212529';
+      item.style.border = '';
+    })
+
+  })
+
+  const vTextarea = document.querySelector('textarea');
+
+  vTextarea.addEventListener('focus', function(){
+    const vParentElement = vTextarea.parentElement.parentElement.childNodes[1];
+    vParentElement.style.color = 'green';
+    vTextarea.style.border = '1px solid green';
+  });
+
+  vTextarea.addEventListener('focusout', function(){
+    const vParentElement = vTextarea.parentElement.parentElement.childNodes[1];
+    vParentElement.style.color = '#212529';
+    vTextarea.style.border = '';
+  })
+
+
+
+
+</script>

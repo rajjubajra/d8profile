@@ -1,0 +1,75 @@
+
+<div class="layout-container">
+
+  
+
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+
+  {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
+  {{ page.help }}
+
+  <main role="main">
+    
+  
+    <div class="layout-content">
+      
+      <header>
+        {{ page.header }}
+      </header>
+      {{ page.content }}
+    </div>{# /.layout-content #}
+
+    {% if page.sidebar_first %}
+      <aside class="layout-sidebar-first" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+
+    {% if page.sidebar_second %}
+      <aside class="layout-sidebar-second" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
+
+  </main>
+
+  {% if page.footer %}
+    <footer role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
+
+</div>{# /.layout-container #}
+
+<script>
+
+  /** Header Image animation **/
+  const vHeader_Img = document.querySelector('header img');
+  vHeader_Img.classList.add('animated',  'fadeInDown',  'slow');
+
+  /** Slogan after logo animation **/
+  const vHeader_Span = document.querySelector('header span');
+  vHeader_Span.classList.add('animated','fadeIn', 'delay-2s', 'slow');
+
+  /** front-page class animation **/
+  const vFront_Page = document.querySelector('.front-page');
+  vFront_Page.classList.add('animated','fadeIn', 'delay-4s', 'fast');
+
+  /** contact **/
+  const vContact = document.querySelector('.contact-block');
+  vContact.classList.add('animated','faceIn', 'delay-4s', 'fast');
+
+  /** promo blocks **/
+  const vPromoBlock = document.querySelector('.view-promo-blocks-');
+  vPromoBlock.classList.add('animated','zoomInDown', 'delay-5s', 'slow');
+  
+
+
+
+
+
+</script>
