@@ -123,11 +123,6 @@ const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_
 function getImages(uri){
 
 
-  document.addEventListener('click', function(e){
-    console.log(e.target.id);
-    let imgId = e.target.id;
-  });
-
   let h = new Headers();
   h.append('Accept', 'application/vnd.api+json');
   let req = new Request(uri, {
@@ -136,7 +131,7 @@ function getImages(uri){
     mode: 'cors'
   })
 
-  fetch(req, imgId)
+  fetch(req)
         .then((response) => {
           if(response.ok){
             return response.json();
@@ -145,7 +140,7 @@ function getImages(uri){
           }
         })
         .then((jsonData)=>{
-            console.log(imgId,' IMAGE ID ',jsonData);
+            console.log(jsonData);
             let imgData = '';   
             jsonData.map((img)=>{
               imgData += `
@@ -183,4 +178,9 @@ function showHide(items){
     })
 }
 
+document.addEventListener('click', function(e){
+  
+  let imgId = e.target.id;
+  console.log(imgId);
+});
 </script>
