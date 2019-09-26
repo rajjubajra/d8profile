@@ -122,6 +122,12 @@ const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_
 
 function getImages(uri){
 
+
+  document.addEventListener('click', function(e){
+    console.log(e.target.id);
+    let imgId = e.target.id;
+  });
+
   let h = new Headers();
   h.append('Accept', 'application/vnd.api+json');
   let req = new Request(uri, {
@@ -130,7 +136,7 @@ function getImages(uri){
     mode: 'cors'
   })
 
-  fetch(req)
+  fetch(req, imgId)
         .then((response) => {
           if(response.ok){
             return response.json();
@@ -139,7 +145,7 @@ function getImages(uri){
           }
         })
         .then((jsonData)=>{
-            console.log(jsonData);
+            console.log(imgId,' IMAGE ID ',jsonData);
             let imgData = '';   
             jsonData.map((img)=>{
               imgData += `
@@ -157,23 +163,8 @@ function getImages(uri){
 }// getTaxonomyButtons closed
 getImages(uriImages);
 
-/** IMAGES **/
-const varPics = document.querySelectorAll('.pics');  
-
-/** NODE LIST TO ARRAY **/
-const arrPics = Array.from(varPics);
-
  /** BUTTON **/
-const btnBranding = document.getElementById('Branding')
-const btnProduct = document.getElementById('Products');
-const btnBycles = document.getElementById('bicycle');
-const btnPhotography = document.getElementById('Photography');
-const btnAll = document.getElementById('all');
 
-
-document.addEventListener('click', function(e){
-  console.log(e.target.id);
-});
 
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
@@ -191,12 +182,5 @@ function showHide(items){
       }
     })
 }
-
-console.log('btn branding',btnBranding);
-
-btnBranding.addEventListener('click', showHide);
-btnPhotography.addEventListener('click', showHide);
-btnProduct.addEventListener('click', showHide);
-btnAll.addEventListener('click',showHide);
 
 </script>
