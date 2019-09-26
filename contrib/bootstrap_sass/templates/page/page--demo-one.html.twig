@@ -170,6 +170,11 @@ const btnBycles = document.getElementById('bicycle');
 const btnPhotography = document.getElementById('Photography');
 const btnAll = document.getElementById('all');
 
+
+document.addEventListener('click', function(e){
+  console.log(e);
+});
+
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
   const btnClicked = items.target.attributes.id.nodeValue;
