@@ -162,7 +162,7 @@ function getTaxonomyButtons(uri){
               let buttons = '';
 
               console.log(jsonData);
-              jsonData.data.map((item)=>{
+              jsonData.map((item)=>{
                   buttons += ` <button id="${item.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
                       ${item.name}
                     </button>`;
