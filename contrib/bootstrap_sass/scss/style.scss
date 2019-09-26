@@ -6,10 +6,16 @@ Description: Bootstrap 4 with Sass
 // import files
 @import "import";
 
-@keyframes fdeffect{
+
+/**
+animation
+*/
+@keyframes fadeOut{
     from{opacity: 0;}
-    to{opacity: 1;}
+    to{ opacity: 1; }
 }
+
+
 
 /* GENERAL STYLES
 -------------------------------------------------*/
@@ -362,3 +368,293 @@ MENU PAGE
         }
     }
 }
+
+
+
+
+
+
+/***
+COMMING SOON PAGE STYLE
+***/
+.coming-soon{
+    header{
+        a.navbar-brand{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img{
+                border-style: none;
+                max-width: 240px;
+                width: 100%;
+                height: auto;
+                padding: 30px;
+                box-sizing: content-box;
+                @media(min-width: 1200px){
+                    max-width: 340px;
+                }
+            }
+            span{
+                font-size: 0.85rem;
+                font-weight: 100;
+                letter-spacing: 0px;
+                text-align: center;
+                color: #9a4a4a;
+                margin-top: -30px;
+            }
+        }
+    }
+    .layout-content {
+        width: 100%;
+        @media (min-width:1200px) {
+            height: 100vh;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .front-page{
+        &::before{
+            content: '';
+            border-top: 1px solid #ffcc00;
+            width: 100%;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2.title{
+            font-size: 1.9rem;
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+        p{
+            font-size: 1.64062rem;
+            font-weight: 100;
+            margin-top: -15px;
+            @media(min-width: 1200px){
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .contact-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation-delay: 1s;
+        animation-name: opacity_animation;
+        animation-direction: 2s;
+        h2.sub-title{
+            font-size: 0.93rem;
+        }
+        img{
+            width: 50px;
+            height: auto;
+        }
+        .phone {
+            margin-top: -11px;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 100;
+            span.fab.fa-viber {
+                position: relative;
+                top: 2px;
+                margin: 10px;
+                padding: 0px;
+            }
+        }
+        .btn-messageme {
+            padding: 5px 15px;
+            margin: 0px 0px 15px 0px;
+            border-radius: 10px;
+            border-bottom: 1px solid #999;
+            border-top: 1px solid transparent;
+            &::after{
+                font-family: "Font Awesome 5 Free";
+                font-weight: 100;
+                content: "\f1d8";
+                padding: 5px;
+            }
+            &:hover{
+                border-top: 1px solid #999;
+                transition: border-top 2s;
+            }
+            a{
+                color: #333;
+                text-decoration: none;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+            }
+        }
+    }
+
+    .promos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .promo-block{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 100px;
+        transition: box-shadow 2s;
+        box-shadow: 1px 1px 10px -1px #ccc;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 12px;
+        border: 1px solid #f9f9f9;
+        background: #f5f5f5;
+            &:hover{
+                box-shadow: 1px 1px 2px -1px #ccc;
+                transition: box-shadow 2s;
+                background: #f5f5f5;
+                transition: background-color 2s;
+                border: 1px solid #ccc;
+                transition: border 1s;
+            }
+
+        img{
+            width: 30px;
+            height: auto;
+        }
+        a{
+            font-size: 0.9rem;
+            color: #444546;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        span.promo-title {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #708090;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #708090;
+        }
+    }
+
+    .contact{
+        width: 100%;
+        height: 100vh;
+
+        .contact-left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            a.navbar-brand{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img{
+                    border-style: none;
+                    max-width: 300px;
+                    width: 100%;
+                    height: auto;
+                    padding: 30px;
+                    box-sizing: content-box;
+                }
+                span{
+                    font-size: 0.8rem;
+                    font-weight: 100;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    color: #9a4a4a;
+                    margin-top: -30px;
+
+                }
+            }
+        }
+
+        .contact-form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            border-left: 1px solid #ccc;
+
+            .form-close{
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+                cursor: pointer;
+                margin: 20px;
+            }
+            h1.title{
+                font-size: 1.5rem;
+                font-weight: 100;
+                margin-bottom: 45px;
+                background: whitesmoke;
+                padding: 5px 40px;
+                border-bottom: 1px solid #ccc;
+            }
+            form{
+                width: 300px;
+                label{
+                    font-size: 0.8rem;
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                input, textarea{
+                    border: 0px;
+                    border-bottom: 1px solid #ccc;
+                }
+
+                button{
+                    margin-top: 20px;
+                }
+                .btn-primary {
+                    color:#333;
+                    border-color: #b7b7b7;
+                    background-color: #fff;
+                    font-weight: 100;
+                    text-align: tra;
+                    text-transform: uppercase;
+                    font-size: 0.8rem;
+                    letter-spacing: 3px;
+                    &::after{
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 100;
+                        content: "\f1d8";
+                        padding: 5px;
+                    }
+                    &:hover{
+                        background-color:  #205021;
+                        color: #b7b7b7;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+/***
+COMMING SOON PAGE STYLE CLOSED
+***/
