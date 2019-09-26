@@ -57,8 +57,6 @@
   </div>
 
 
-
-  
   {% if page.footer %}
     <footer role="contentinfo">
       {{ page.footer }}
@@ -66,6 +64,8 @@
   {% endif %}
 
 </div>{# /.layout-container #}
+
+
 
 <script>
 
@@ -114,11 +114,9 @@ function getTaxonomyButtons(uri){
 getTaxonomyButtons(uriButtons);
 
 
-
 /** GET IMAGES **/
 const uiImages = document.querySelector('#gallery');
-console.log(uiImages);
-
+//console.log(uiImages);
 
 const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
 
@@ -159,8 +157,6 @@ function getImages(uri){
 }// getTaxonomyButtons closed
 getImages(uriImages);
 
-
-
 /** IMAGES **/
 const varPics = document.querySelectorAll('.pics');  
 
@@ -191,18 +187,11 @@ function showHide(items){
     })
 }
 
+console.log('btn branding',btnBranding);
+
 btnBranding.addEventListener('click', showHide);
 btnPhotography.addEventListener('click', showHide);
 btnProduct.addEventListener('click', showHide);
 btnAll.addEventListener('click',showHide);
-
-
-
-
-
-
-
-
-
 
 </script>
