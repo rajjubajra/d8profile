@@ -211,7 +211,7 @@ function getImages(uri){
             jsonData.map((img)=>{
               imgData += `
                 <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
-                  <img class="img-fluid" src="https://${window.location.hostname}${img.field_website_gallery_image}" alt="Card image cap">
+                  <img class="img-fluid" src="https://${img.field_website_gallery_image}" alt="Card image cap">
                 </div>`  
             })
             uiImages.innerHTML = imgData;
