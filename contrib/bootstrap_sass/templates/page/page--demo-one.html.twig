@@ -158,8 +158,6 @@ function getImages(uri){
 }// getTaxonomyButtons closed
 getImages(uriImages);
 
-const varProducts = document.querySelector('#Products');
-console.log('PRODUCTS VAR : ',varProducts);
 
 
  /** BUTTON **/
@@ -183,6 +181,9 @@ function showHide(items){
 document.addEventListener('click', function(e){
   
   let imgId = e.target.id;
+  //return imgId;
   console.log(imgId);
 });
+
+console.log('imag id outside ',imgId);
 </script>
