@@ -76,12 +76,11 @@
 
     //data structure 
     const state = {
-        imgGallery: [],
+        imgGallery: '',
         galleryType: ''
     }
 
     const getImages = function(uri){
-
         let h = new Headers();
         h.append('Accept', 'application/vnd.api+json');
         let req = new Request(uri, {
@@ -100,7 +99,7 @@
               })
               .then((jsonData)=>{
                   console.log(jsonData);
-                  state.imgGallery.concat(jsonData);
+                  state.imgGallery = jsonData;
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
