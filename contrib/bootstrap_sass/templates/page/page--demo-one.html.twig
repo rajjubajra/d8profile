@@ -72,24 +72,54 @@
   //item controller
   const itemCntr = (function(){
 
-      const items = function(uri, galleryType){
-        this.uri = uri;
-        this.galleryType = galleryType;
-      }
+    const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
 
-      //data structure 
+    //data structure 
       const state = {
-        imgs: [
-        {id: 0, name: 'name one', type: 'photography'},
-        {id: 1, name: 'image two', type: 'Graphics'}
-        ],
+        imgGallery: [],
         galleryType: ''
       }
+
+
+
+      const getImages = function(uri){
+
+        let h = new Headers();
+        h.append('Accept', 'application/vnd.api+json');
+        let req = new Request(uri, {
+          method: 'GET',
+          headers: h,
+          mode: 'cors'
+        })
+      
+        fetch(req)
+              .then((response) => {
+                if(response.ok){
+                  return response.json();
+                }else{
+                  throw new Error('BAD HTTP stuff');
+                }
+              })
+              .then((jsonData)=>{
+                  console.log(jsonData);
+                  state.imgGallery.push(jsonData);
+              })
+              .catch((err)=>{ 
+                console.log('Error', err.message);
+              });
+      
+      
+      }// getImages closed
+      getImages(uriImages);
+
+
+
+
 
       //public 
       return{
         imgData: function(){
-          return state.imgs;
+          return state.imgGallery;
         },
         galleryType: function(){
           return state.gallery;
@@ -155,6 +185,7 @@
         //load event listener function
         loadEvenetListener();
       }
+      
 
     }
 
@@ -255,7 +286,7 @@ function getImages(uri){
         });
 
 
-}// getTaxonomyButtons closed
+}// getImages closed
 getImages(uriImages);
 
  /** BUTTON *
