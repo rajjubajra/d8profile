@@ -69,6 +69,81 @@
 
 <script>
 
+  //item controller
+  const itemCntr = (function(){
+
+      const items = function(uri){
+        this.uri = uri;
+      }
+
+      //data structure 
+      const state = {
+        imgs = [
+        {id: 0, name: 'name one', type: 'photography'},
+        {id: 1, name: 'image two', type: 'Graphics'}
+        ]
+      }
+
+      //public 
+      return{
+        imgData = function(){
+          return state;
+        }
+      }
+    
+  })();
+
+
+  //ui controller
+  const uiCntr = (function(){
+
+    const uiSelectors = {
+      gallery = '#gallery',
+    }
+
+
+    //public method
+    return{
+      populateImageGallery: function(images){
+        let html = ''
+        images.map((img)=>{
+          html += `
+                <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+                  <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
+                </div>`;
+
+        });
+        document.querySelector(uiSelectors.gallery).innerHTML = html;
+      },
+      getSlector: function(){
+        return uiSelectors;
+      }
+    }
+
+  })();
+  
+
+  //app
+  const app = (function(itemCntr, uiCntr){
+
+    console.log(itemCntr.imgData());
+
+    //public method
+    return {
+      init: function(){
+        console.log('initalizing....');
+      }
+    }
+
+  })(itemCntr, uiCntr);
+
+
+  //initialize app
+  app.init();
+
+
+
+
 /** GET BUTTONS **/
 const uiBottons = document.querySelector('.justify-content-center');
 //console.log('button placeholder', uiBottons);
@@ -121,7 +196,6 @@ const uiImages = document.querySelector('#gallery');
 const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
 
 function getImages(uri){
-
 
   let h = new Headers();
   h.append('Accept', 'application/vnd.api+json');
