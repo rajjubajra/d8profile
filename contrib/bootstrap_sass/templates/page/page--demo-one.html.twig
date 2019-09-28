@@ -80,9 +80,7 @@
         galleryType: ''
       }
 
-
-
-      const getImages = function(uri){
+    const getImages = function(uri){
 
         let h = new Headers();
         h.append('Accept', 'application/vnd.api+json');
@@ -110,7 +108,7 @@
       
       
       }// getImages closed
-      getImages(uriImages);
+    getImages(uriImages);
 
 
 
@@ -166,14 +164,10 @@
       const uiSelector = uiCntr.getSlectors();
 
       document.addEventListener('click', function(e){
-  
         let imgId = e.target.id;
         //return imgId;
         console.log(imgId);
       });
-      
-
-
     }
 
     console.log(itemCntr.imgData());
@@ -185,8 +179,6 @@
         //load event listener function
         loadEvenetListener();
       }
-      
-
     }
 
   })(itemCntr, uiCntr);
