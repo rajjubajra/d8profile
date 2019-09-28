@@ -72,11 +72,17 @@
   //item controller
   const itemCntr = (function(){
 
+    const imgGallery = function(title, body, imguri){
+      this.title = title;
+      this.body = body;
+      this.imguri = imguri;
+    }
+
     const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
 
     //data structure 
     const state = {
-        imgGallery: '',
+        imgGallery: [],
         galleryType: ''
     }
 
@@ -98,14 +104,16 @@
                 }
               })
               .then((jsonData)=>{
+                  
                   console.log(jsonData);
-                  state.imgGallery = jsonData;
+                  jsonData.map((item)=>{
+                    state.imgGallery.push(item.title, item.body.item.field_website_gallery_image);
+                  })
+                
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
               });
-      
-      
       }// getImages closed
     getImages(uriImages);
 
