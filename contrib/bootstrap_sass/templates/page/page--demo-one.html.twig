@@ -126,13 +126,31 @@
   //app
   const app = (function(itemCntr, uiCntr){
 
+    const loadEvenetListener = function(){
+      //get ui Selector 
+      const uiSelector = uiCntr.getSlectors();
+
+      document.addEventListener('click', function(e){
+  
+        let imgId = e.target.id;
+        //return imgId;
+        console.log(imgId);
+      });
+      
+
+
+    }
+
     console.log(itemCntr.imgData());
 
     //public method
     return {
       init: function(){
         console.log('initalizing....');
+        //load event listener function
+        loadEvenetListener();
       }
+
     }
 
   })(itemCntr, uiCntr);
@@ -140,6 +158,7 @@
 
   //initialize app
   app.init();
+
 
 
 
@@ -232,8 +251,6 @@ function getImages(uri){
 }// getTaxonomyButtons closed
 getImages(uriImages);
 
-
-
  /** BUTTON **/
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
@@ -252,11 +269,5 @@ function showHide(items){
     })
 }
 
-document.addEventListener('click', function(e){
-  
-  let imgId = e.target.id;
-  //return imgId;
-  console.log(imgId);
-});
 
 </script>
