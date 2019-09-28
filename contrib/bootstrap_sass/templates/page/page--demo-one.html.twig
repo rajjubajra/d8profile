@@ -104,12 +104,12 @@
                 }
               })
               .then((jsonData)=>{
-                  const newImgArr = ''
+                  const newImgArr = [];
                   console.log(jsonData);
                   jsonData.map((item)=>{
-                    newImgArr += {title: item.title, body: item.body, image: item.field_website_gallery_image, taxonomy: item.field_website_gallery_taxonomy};
+                    newImgArr.push({title: item.title, body: item.body, image: item.field_website_gallery_image, taxonomy: item.field_website_gallery_taxonomy});
                   })
-                state.imgGallery.push(newImgArr);
+                state.imgGallery.concat(newImgArr);
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
