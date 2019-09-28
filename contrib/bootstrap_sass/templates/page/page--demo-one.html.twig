@@ -104,12 +104,12 @@
                 }
               })
               .then((jsonData)=>{
-                  
+                  const newImgArr = ''
                   console.log(jsonData);
                   jsonData.map((item)=>{
-                    state.imgGallery.push({title: item.title, body: item.body, image: item.field_website_gallery_image});
+                    newImgArr += {title: item.title, body: item.body, image: item.field_website_gallery_image, taxonomy: item.field_website_gallery_taxonomy};
                   })
-                
+                state.imgGallery.push(newImgArr);
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
@@ -148,8 +148,8 @@
         let html = ''
         images.map((img)=>{
           html += `
-                <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
-                  <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
+                <div id="${img.taxonomy}" class="mb-3 pics animation all">
+                  <img class="img-fluid" src="${img.image}" alt="Card image cap">
                 </div>`;
 
         });
