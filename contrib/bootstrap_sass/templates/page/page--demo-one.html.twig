@@ -107,7 +107,7 @@
                   
                   console.log(jsonData);
                   jsonData.map((item)=>{
-                    state.imgGallery.push([{title: item.title, body: item.body, image: item.field_website_gallery_image, taxonomy: item.field_website_gallery_taxonomy}]);
+                    state.imgGallery.push({title: item.title, body: item.body, image: item.field_website_gallery_image, taxonomy: item.field_website_gallery_taxonomy});
                   })
                 
               })
