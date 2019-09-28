@@ -72,8 +72,9 @@
   //item controller
   const itemCntr = (function(){
 
-      const items = function(uri){
+      const items = function(uri, galleryType){
         this.uri = uri;
+        this.galleryType = galleryType;
       }
 
       //data structure 
@@ -81,13 +82,17 @@
         imgs: [
         {id: 0, name: 'name one', type: 'photography'},
         {id: 1, name: 'image two', type: 'Graphics'}
-        ]
+        ],
+        galleryType: ''
       }
 
       //public 
       return{
         imgData: function(){
           return state.imgs;
+        },
+        galleryType: function(){
+          return state.gallery;
         }
       }
     
@@ -208,7 +213,9 @@ function getTaxonomyButtons(uri){
 getTaxonomyButtons(uriButtons);
 
 
-/** GET IMAGES **/
+
+
+/** GET IMAGES *
 const uiImages = document.querySelector('#gallery');
 //console.log(uiImages);
 
@@ -251,7 +258,7 @@ function getImages(uri){
 }// getTaxonomyButtons closed
 getImages(uriImages);
 
- /** BUTTON **/
+ /** BUTTON *
 function showHide(items){
   console.log('item clicked', items.target.attributes.id.nodeValue);
   const btnClicked = items.target.attributes.id.nodeValue;
@@ -268,6 +275,6 @@ function showHide(items){
       }
     })
 }
-
+*/
 
 </script>
