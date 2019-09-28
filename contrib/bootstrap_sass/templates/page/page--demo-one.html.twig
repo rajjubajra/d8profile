@@ -76,7 +76,7 @@
 
     //data structure 
     const state = {
-        imgGallery: NULL,
+        imgGallery: [],
         galleryType: ''
     }
 
@@ -100,7 +100,7 @@
               })
               .then((jsonData)=>{
                   console.log(jsonData);
-                  state.imgGallery = jsonData;
+                  state.imgGallery.concat(jsonData);
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
