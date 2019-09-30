@@ -115,7 +115,7 @@
                 
                     //const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
                     jsonData.forEach(function(item){
-                      state.imageData.push(item.field_website_gallery_image);
+                      state.imageData.push.apply(item.field_website_gallery_image, state.imageData);
                     })
                   
               })
