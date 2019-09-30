@@ -109,14 +109,12 @@
               })
               .then((jsonData)=>{         
                   console.log(jsonData);
-                  console.log(JSON.stringify(jsonData));
-                  console.log(JSON.parse(JSON.stringify(jsonData)));      
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
               });
       }// getImages closed
-    getImages(uriImages);
+    getImages();
 
     //public 
       return{
