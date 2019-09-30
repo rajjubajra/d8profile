@@ -122,10 +122,10 @@
 
       //public 
       return{
-        data: function(){
-          return state.imgGallery;
+        galleryData: function(){
+          return state.imageData;
         },
-        gallery: function(){
+        galleryType: function(){
           return state.galleryType;
         }
       }
@@ -179,8 +179,8 @@
       });
     }
 
-    console.log('IMAGE IN STATE :',itemCntr.data());
-    console.log('GALLERY TYPE : ',itemCntr.gallery());
+    console.log('IMAGE IN STATE :',itemCntr.galleryData());
+    console.log('GALLERY TYPE : ',itemCntr.galleryType());
 
     //public method
     return {
