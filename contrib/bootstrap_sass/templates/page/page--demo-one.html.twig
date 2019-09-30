@@ -69,21 +69,8 @@
 
 <script>
 
-  //item controller
+/* ITEM CONTROLLER *******************************************/ 
   const itemCntr = (function(){
-
-    const items = function(title, body, imguri, taxonomy){
-      this.title = title;
-      this.body = body;
-      this.imguri = imguri;
-      this.taxonomy = taxonomy;
-      return `{ "title": ${this.title}, 
-                "body": ${this.body}, 
-                "image": ${this.imguri}, 
-                "taxonomy": ${this.taxonomy} }`
-    }
-
-    const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
 
     //data structure 
     const state = {
@@ -101,10 +88,13 @@
         galleryType: ''
     }
 
-    const getImages = function(uri){
+    const getImages = function(){
+
+    const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
+
         let h = new Headers();
         h.append('Accept', 'application/vnd.api+json');
-        let req = new Request(uri, {
+        let req = new Request(uriImages, {
           method: 'GET',
           headers: h,
           mode: 'cors'
@@ -120,10 +110,7 @@
               .then((jsonData)=>{         
                   console.log(jsonData);
                   console.log(JSON.stringify(jsonData));
-                  console.log(JSON.parse(JSON.stringify(jsonData)));
-                    //const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
-                  //  state.imageData.push(jsonData);
-                  
+                  console.log(JSON.parse(JSON.stringify(jsonData)));      
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
@@ -131,12 +118,12 @@
       }// getImages closed
     getImages(uriImages);
 
-      //public 
+    //public 
       return{
-        galleryData: function(){
+        getImageData: function(){
           return state.imageData;
         },
-        galleryType: function(){
+        getGalleryType: function(){
           return state.galleryType;
         }
       }
@@ -144,34 +131,34 @@
   })();
 
 
-  //ui controller
+ /* UI CONTROLLER *******************************************/ 
   const uiCntr = (function(){
 
     const uiSelectors = {
       gallery: '#gallery',
     }
 
-
     //public method
     return{
-      populateImageGallery: function(images){
-        console.log('populate image', images);
-        let html = ''
-        images.map((img)=>{
-          html += `
-                <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
-                  <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
-                </div>`;
-        });
-        document.querySelector(uiSelectors.gallery).innerHTML = html;
+    imageGalleryLayout: function(data){
+        let html = '';
+          data.map((item)=>{
+            html += `
+                  <div id="${item.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+                    <img class="img-fluid" src="${item.field_website_gallery_image}" alt="Card image cap">
+                  </div>`;
+          });
+          document.querySelector(uiSelectors.gallery).innerHTML = html;
       },
       getSlectors: function(){
         return uiSelectors;
       }
     }
   })();
-  
-  //app
+
+
+
+/* APP *******************************************/ 
   const app = (function(itemCntr, uiCntr){
 
     const loadEvenetListener = function(){
@@ -180,33 +167,24 @@
 
       document.addEventListener('click', function(e){
         let imgId = e.target.id;
-
         uiCntr.galleryType = imgId;
-
         //return imgId;
         console.log(imgId);
       });
     }
 
-    console.log('IMAGE IN STATE :',itemCntr.galleryData());
-    console.log('GALLERY TYPE : ',itemCntr.galleryType());
-
-
+    console.log('IMAGE IN STATE :',itemCntr.getImageData());
+    console.log('GALLERY TYPE : ',itemCntr.getGalleryType());
 
     //public method
     return {
       init: function(){
-
         console.log('initalizing....???');
-        const imageItems = itemCntr.galleryData();
-        populateImageGallery(imageItems);
         //load event listener function
         loadEvenetListener();
       }
     }
-
   })(itemCntr, uiCntr);
-
 
   //initialize app
   app.init();
@@ -214,8 +192,7 @@
 
 
 
-
-/** GET BUTTONS **/
+/** GET BUTTONS *
 const uiBottons = document.querySelector('.justify-content-center');
 //console.log('button placeholder', uiBottons);
 const uriButtons = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
