@@ -122,7 +122,7 @@
 
       //public 
       return{
-        imgData: function(){
+        data: function(){
           return state.imgGallery;
         },
         gallery: function(){
@@ -179,12 +179,13 @@
       });
     }
 
-    console.log('IMAGE IN STATE :',itemCntr.imageData());
+    console.log('IMAGE IN STATE :',itemCntr.data());
     console.log('GALLERY TYPE : ',itemCntr.gallery());
 
     //public method
     return {
       init: function(){
+
         console.log('initalizing....');
         populateImageGallery(itemCntr.imgData());
         //load event listener function
