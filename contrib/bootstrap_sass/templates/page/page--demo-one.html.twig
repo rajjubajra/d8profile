@@ -77,7 +77,11 @@
       this.title = title;
       this.body = body;
       this.imguri = imguri;
-      this.taxonomy;
+      this.taxonomy = taxonomy;
+      return `{ "title": ${this.title}, 
+                "body": ${this.body}, 
+                "image": ${this.imguri}, 
+                "taxonomy": ${this.taxonomy} }`
     }
 
     const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
@@ -109,11 +113,7 @@
                   console.log(JSON.stringify(jsonData));
                   console.log(JSON.parse(JSON.stringify(jsonData)));
                   jsonData.map((item) =>{
-                    state.imageData.push(`{ 
-                      title: ${item.title}, 
-                      body: ${item.body}, 
-                      image: ${item.field_website_gallery_image}, 
-                      taxonomy: ${item.field_website_gallery_taxonomy}  }`);
+                    state.imageData.push(items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy));
                   })
               })
               .catch((err)=>{ 
