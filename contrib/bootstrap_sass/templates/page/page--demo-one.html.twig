@@ -191,12 +191,15 @@
     console.log('IMAGE IN STATE :',itemCntr.galleryData());
     console.log('GALLERY TYPE : ',itemCntr.galleryType());
 
+
+
     //public method
     return {
       init: function(){
 
         console.log('initalizing....???');
-        populateImageGallery(itemCntr.galleryData());
+        const imageItems = itemCntr.galleryData();
+        populateImageGallery(imageItems);
         //load event listener function
         loadEvenetListener();
       }
