@@ -178,8 +178,11 @@
     return {
       init: function(){
         console.log('initalizing....???');
+        let data = itemCntr.getImageData();
+        console.log('data',data);
+        imageGalleryLayout(data);
         //load event listener function
-        loadEvenetListener();
+        //loadEvenetListener();
       }
     }
   })(itemCntr, uiCntr);
