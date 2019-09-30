@@ -72,7 +72,6 @@
   //item controller
   const itemCntr = (function(){
 
-
     const items = function(title, body, imguri, taxonomy){
       this.title = title;
       this.body = body;
@@ -85,10 +84,10 @@
     }
 
     const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-    
+
     //data structure 
     const state = {
-        imageData: '',
+        imageData: [],
         galleryType: ''
     }
 
@@ -114,8 +113,8 @@
                   console.log(JSON.parse(JSON.stringify(jsonData)));
                   
                   jsonData.map((item) =>{
-                    const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
-                    state.imageData = newItem;
+                    //const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
+                    state.imageData.push(`title: ${image.field_website_gallery_image}`);
                   })
               })
               .catch((err)=>{ 
