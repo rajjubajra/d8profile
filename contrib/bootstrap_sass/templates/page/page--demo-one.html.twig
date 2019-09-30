@@ -114,7 +114,7 @@
                   
                 
                     //const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
-                    Aarray.prototype.push.apply(state.imageData, jsonData);
+                    state.imageData.push(jsonData);
                   
               })
               .catch((err)=>{ 
