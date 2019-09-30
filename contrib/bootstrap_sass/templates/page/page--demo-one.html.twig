@@ -111,8 +111,6 @@
                   console.log(jsonData);
                   console.log(JSON.stringify(jsonData));
                   console.log(JSON.parse(JSON.stringify(jsonData)));
-                  
-                
                     //const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
                     state.imageData.push(jsonData);
                   
@@ -122,10 +120,6 @@
               });
       }// getImages closed
     getImages(uriImages);
-
-
-
-
 
       //public 
       return{
@@ -154,10 +148,9 @@
         let html = ''
         images.map((img)=>{
           html += `
-                <div id="${img.taxonomy}" class="mb-3 pics animation all">
-                  <img class="img-fluid" src="${img.image}" alt="Card image cap">
+                <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+                  <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
                 </div>`;
-
         });
         document.querySelector(uiSelectors.gallery).innerHTML = html;
       },
@@ -165,10 +158,8 @@
         return uiSelectors;
       }
     }
-
   })();
   
-
   //app
   const app = (function(itemCntr, uiCntr){
 
@@ -194,7 +185,7 @@
       init: function(){
 
         console.log('initalizing....');
-        populateImageGallery(itemCntr.imgData());
+        populateImageGallery(itemCntr.imageData());
         //load event listener function
         loadEvenetListener();
       }
