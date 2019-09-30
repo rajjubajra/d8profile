@@ -112,8 +112,10 @@
                   console.log(jsonData);
                   console.log(JSON.stringify(jsonData));
                   console.log(JSON.parse(JSON.stringify(jsonData)));
+                  
                   jsonData.map((item) =>{
-                    state.imageData.push(items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy));
+                    const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
+                    state.imageData.push(newItem);
                   })
               })
               .catch((err)=>{ 
