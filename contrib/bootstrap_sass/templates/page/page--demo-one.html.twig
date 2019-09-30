@@ -72,14 +72,14 @@
   //item controller
   const itemCntr = (function(){
 
-    const imgGallery = function(title, body, imguri){
+
+    const items = function(title, body, imguri, taxonomy){
       this.title = title;
       this.body = body;
       this.imguri = imguri;
+      this.taxonomy;
     }
-
     const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-
     //data structure 
     const state = {
         imgGallery: [],
@@ -93,8 +93,7 @@
           method: 'GET',
           headers: h,
           mode: 'cors'
-        })
-      
+        })    
         fetch(req)
               .then((response) => {
                 if(response.ok){
@@ -103,13 +102,11 @@
                   throw new Error('BAD HTTP stuff');
                 }
               })
-              .then((jsonData)=>{
-                  
+              .then((jsonData)=>{         
                   console.log(jsonData);
                   jsonData.map((item)=>{
-                    state.imgGallery.push({title: item.title, body: item.body, image: item.field_website_gallery_image, taxonomy: item.field_website_gallery_taxonomy});
+                    items(item.title, item.body, item.imguri, item.taxonomy);
                   })
-                
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
