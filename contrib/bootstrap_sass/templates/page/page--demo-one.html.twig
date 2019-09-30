@@ -109,7 +109,7 @@
                   console.log(JSON.stringify(jsonData));
                   console.log(JSON.parse(JSON.stringify(jsonData)));
                   jsonData.map((item) =>{
-                    imageData.push(items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy));
+                    state.imageData.push(items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy));
                   })
               })
               .catch((err)=>{ 
