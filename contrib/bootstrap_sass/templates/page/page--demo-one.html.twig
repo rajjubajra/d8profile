@@ -109,6 +109,7 @@
               })
               .then((jsonData)=>{         
                   console.log(jsonData);
+                  state.imageData.push(jsonData);
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
@@ -136,6 +137,7 @@
       gallery: '#gallery',
     }
 
+
     //public method
     return{
     imageGalleryLayout: function(data){
@@ -147,8 +149,8 @@
                   </div>`;
           });
           document.querySelector(uiSelectors.gallery).innerHTML = html;
-      },
-      getSlectors: function(){
+    },
+    getSlectors: function(){
         return uiSelectors;
       }
     }
