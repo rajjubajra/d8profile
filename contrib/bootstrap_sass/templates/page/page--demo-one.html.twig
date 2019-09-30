@@ -115,7 +115,7 @@
                   
                   jsonData.map((item) =>{
                     const newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
-                    state.imageData.push(newItem);
+                    state.imageData.concat(newItem);
                   })
               })
               .catch((err)=>{ 
