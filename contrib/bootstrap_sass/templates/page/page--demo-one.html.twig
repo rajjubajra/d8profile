@@ -112,10 +112,12 @@
                   console.log('Error', err.message);
                 });
         }// getImages closed
+        addImageData();
         
 
     //public 
       return{
+
         getImageData: function(){
           return state.imageData;
         },
