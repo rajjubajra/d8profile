@@ -74,8 +74,7 @@
 
     //data structure 
     const state = {
-        imageData:[{title: "Photography Image", body: "",image: "/profile/sites/default/files/2019-10/film-147137_640.png",taxonomy: "Photography"
-        },],
+        imageData:[{}],
         galleryType: ''
     }
 
@@ -158,7 +157,6 @@
   })();
 
 
-
 /* APP *******************************************/ 
   const app = (function(itemCntr, uiCntr){
 
@@ -189,9 +187,9 @@
       }
     }
   })(itemCntr, uiCntr);
-
   //initialize app
   app.init();
+
 
 
 
@@ -209,7 +207,6 @@ function getTaxonomyButtons(uri){
       headers: h,
       mode: 'cors'
     })
-
 
     fetch(req)
           .then((response) => {
@@ -236,12 +233,8 @@ function getTaxonomyButtons(uri){
             console.log('Error', err.message);
           });
 
-
 }// getTaxonomyButtons closed
 getTaxonomyButtons(uriButtons);
-
-
-
 
 /** GET IMAGES *
 const uiImages = document.querySelector('#gallery');
