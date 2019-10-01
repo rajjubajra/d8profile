@@ -72,17 +72,23 @@
 /* ITEM CONTROLLER *******************************************/ 
   const itemCntr = (function(){
 
+    const items = function(title, body, image, taxonomy){
+      this.title = title;
+      this.body = body;
+      this.image = image;
+      this.taxonomy = taxonomy;
+    }
+
     //data structure 
     const state = {
         imageData:[],
         galleryType: ''
     }
 
-
     //public 
       return{
 
-    getImages: function(){
+      addItem: function(){
 
       const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
           let h = new Headers();
@@ -102,14 +108,10 @@
                 })
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
-                   
+
                     jsonData.forEach(function(item){
-                      state.imageData.push(
-                        {title: item.title,  
-                        body: item.body, 
-                        field_website_gallery_image: item.field_website_gallery_image,
-                        field_website_gallery_taxonomy: item.field_website_gallery_taxonomy}
-                        )
+                      newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
+                      state.imageData.push(newItem);
                     })
                     
                 })
