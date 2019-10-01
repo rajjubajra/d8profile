@@ -72,24 +72,19 @@
 /* ITEM CONTROLLER *******************************************/ 
   const itemCntr = (function(){
 
+    //data structure 
+    const state = {
+        imageData:[{title: "Photography Image", body: "",image: "/profile/sites/default/files/2019-10/film-147137_640.png",taxonomy: "Photography"
+        },],
+        galleryType: ''
+    }
+
     const items = function(title, body, image, taxonomy){
       this.title = title;
       this.body = body;
       this.image = image;
       this.taxonomy = taxonomy;
     }
-
-    //data structure 
-    const state = {
-        imageData:[{
-          title: "Photography Image",
-          body: "",
-image: "/profile/sites/default/files/2019-10/film-147137_640.png",
-taxonomy: "Photography"
-        },],
-        galleryType: ''
-    }
-
 
     const addImageData =  function(){
 
@@ -125,7 +120,6 @@ taxonomy: "Photography"
 
     //public 
       return{
-
         getImageData: function(){
           return state.imageData;
         },
@@ -149,8 +143,8 @@ taxonomy: "Photography"
         let html = '';
           data.forEach(function(item){
           html += `
-                  <div id="${item.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
-                    <img class="img-fluid" src="${item.field_website_gallery_image}" alt="Card image cap">
+                  <div id="${item.taxonomy}" class="mb-3 pics animation all">
+                    <img class="img-fluid" src="${item.image}" alt="Card image cap">
                   </div>
                   `;
         });
@@ -188,6 +182,7 @@ taxonomy: "Photography"
       init: function(){
         console.log('initalizing....???');
         let data = itemCntr.getImageData();
+        console.log(data);
         uiCntr.imageGalleryLayout(data);
         //load event listener function
         //loadEvenetListener();
