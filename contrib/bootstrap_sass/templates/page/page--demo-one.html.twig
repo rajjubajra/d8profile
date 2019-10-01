@@ -99,7 +99,7 @@
               })
               .then((jsonData)=>{         
                   console.log('jsonData : ',jsonData);
-                  state.imageData.forEach(function(item){
+                  jsonData.forEach(function(item){
                     state.imageData.push({
                       title:item.title,  
                       body: item.body, 
