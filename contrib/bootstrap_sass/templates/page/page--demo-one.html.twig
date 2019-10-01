@@ -106,11 +106,6 @@
                 })
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
-
-                    jsonData.forEach(function(item){
-                      let newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
-                      state.imageData.push(newItem);
-                    })
                     
                 })
                 .catch((err)=>{ 
@@ -182,6 +177,7 @@
     return {
       init: function(){
         console.log('initalizing....???');
+        itemCntr.addImageData();
         let data = itemCntr.getImageData();
         uiCntr.imageGalleryLayout(data);
         //load event listener function
