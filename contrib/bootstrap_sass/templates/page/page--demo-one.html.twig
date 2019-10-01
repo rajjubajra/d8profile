@@ -85,7 +85,6 @@
     getImages: function(){
 
       const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-  
           let h = new Headers();
           h.append('Accept', 'application/vnd.api+json');
           let req = new Request(uriImages, {
@@ -101,10 +100,9 @@
                     throw new Error('BAD HTTP stuff');
                   }
                 })
-                .then((jsonData)=>{    
+                .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
-                    state.imageData.concat(jsonData);                  
-                    /*
+                   
                     jsonData.forEach(function(item){
                       state.imageData.push(
                         {title: item.title,  
@@ -113,7 +111,7 @@
                         field_website_gallery_taxonomy: item.field_website_gallery_taxonomy}
                         )
                     })
-                    */
+                    
                 })
                 .catch((err)=>{ 
                   console.log('Error', err.message);
