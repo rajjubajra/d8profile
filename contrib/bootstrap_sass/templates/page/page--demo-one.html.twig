@@ -185,7 +185,11 @@
       init: function(){
         console.log('initalizing....???');
         let data = itemCntr.getImageData();
-        console.log('data', data);
+        const dataArr = data.map((item)=>{
+              
+              console.log('data arry item',item);
+        })
+
         uiCntr.imageGalleryLayout(data);
         //load event listener function
         //loadEvenetListener();
