@@ -74,53 +74,51 @@
 
     //data structure 
     const state = {
-        imageData:'',
+        imageData:[],
         galleryType: ''
     }
 
-    const getImages = function(){
-
-    const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-
-        let h = new Headers();
-        h.append('Accept', 'application/vnd.api+json');
-        let req = new Request(uriImages, {
-          method: 'GET',
-          headers: h,
-          mode: 'cors'
-        })    
-        fetch(req)
-              .then((response) => {
-                if(response.ok){
-                  return response.json();
-                }else{
-                  throw new Error('BAD HTTP stuff');
-                }
-              })
-              .then((jsonData)=>{  
-
-                  console.log('jsonData : ',jsonData);
-                  state.imageData = jsonData;
-                 
-                  /*
-                  jsonData.forEach(function(item){
-                    state.imageData.push(
-                      {title: item.title,  
-                      body: item.body, 
-                      field_website_gallery_image: item.field_website_gallery_image,
-                      field_website_gallery_taxonomy: item.field_website_gallery_taxonomy}
-                      )
-                  })
-                  */
-              })
-              .catch((err)=>{ 
-                console.log('Error', err.message);
-              });
-      }// getImages closed
-    getImages();
 
     //public 
       return{
+
+    getImages: function(){
+
+      const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
+  
+          let h = new Headers();
+          h.append('Accept', 'application/vnd.api+json');
+          let req = new Request(uriImages, {
+            method: 'GET',
+            headers: h,
+            mode: 'cors'
+          })    
+          fetch(req)
+                .then((response) => {
+                  if(response.ok){
+                    return response.json();
+                  }else{
+                    throw new Error('BAD HTTP stuff');
+                  }
+                })
+                .then((jsonData)=>{    
+                    console.log('jsonData : ',jsonData);
+                    state.imageData.concat(jsonData);                  
+                    /*
+                    jsonData.forEach(function(item){
+                      state.imageData.push(
+                        {title: item.title,  
+                        body: item.body, 
+                        field_website_gallery_image: item.field_website_gallery_image,
+                        field_website_gallery_taxonomy: item.field_website_gallery_taxonomy}
+                        )
+                    })
+                    */
+                })
+                .catch((err)=>{ 
+                  console.log('Error', err.message);
+                });
+        },// getImages closed
         getImageData: function(){
           return state.imageData;
         },
@@ -183,11 +181,7 @@
       init: function(){
         console.log('initalizing....???');
         let data = itemCntr.getImageData();
-        const dataArr = data.map((item)=>{
-              
-              console.log('data arry item',item.title);
-        })
-
+        uiCntr.getImages();
         uiCntr.imageGalleryLayout(data);
         //load event listener function
         //loadEvenetListener();
