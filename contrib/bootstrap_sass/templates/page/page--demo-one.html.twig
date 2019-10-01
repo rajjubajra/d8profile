@@ -141,19 +141,16 @@
     //public method
     return{
     imageGalleryLayout: function(data){
-        //let html = 'TEST HTML DATA' + data;
-        /*
+        let html = '';
           data.forEach(function(item){
-        
           html += `
                   <div id="${item.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
                     <img class="img-fluid" src="${item.field_website_gallery_image}" alt="Card image cap">
                   </div>
                   `;
-          document.querySelector(uiSelectors.gallery).innerHTML = html;
         });
-        */
-        console.log('HTML: ', data);
+        document.querySelector(uiSelectors.gallery).innerHTML = html;
+        console.log('HTML: ',html + ' | ' + data);
     },
     getSlectors: function(){
         return uiSelectors;
