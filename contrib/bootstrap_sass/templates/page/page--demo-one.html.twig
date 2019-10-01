@@ -106,6 +106,10 @@
               })
               .then((jsonData)=>{         
                   console.log('jsonData : ',jsonData);
+                  jsonData.map((item)=>{
+                    state.imageData.push(item.title, item.body);
+                  })
+                  /*
                   jsonData.forEach(function(item){
                     state.imageData.push(
                       {title: item.title,  
@@ -114,6 +118,7 @@
                       field_website_gallery_taxonomy: item.field_website_gallery_taxonomy}
                       )
                   })
+                  */
               })
               .catch((err)=>{ 
                 console.log('Error', err.message);
