@@ -74,14 +74,7 @@
 
     //data structure 
     const state = {
-        imageData: [
-        {
-        title: "Product",
-        body: "",
-        field_website_gallery_image: "/profile/sites/default/files/2019-09/motorcycle-3698276_640.jpg",
-        field_website_gallery_taxonomy: "Products"
-        },
-        ],
+        imageData:'',
         galleryType: ''
     }
 
@@ -104,11 +97,11 @@
                   throw new Error('BAD HTTP stuff');
                 }
               })
-              .then((jsonData)=>{         
+              .then((jsonData)=>{  
+
                   console.log('jsonData : ',jsonData);
-                  jsonData.map((item)=>{
-                    state.imageData.push({title: item.title, body: item.body});
-                  })
+                  state.imageData = jsonData;
+                 
                   /*
                   jsonData.forEach(function(item){
                     state.imageData.push(
