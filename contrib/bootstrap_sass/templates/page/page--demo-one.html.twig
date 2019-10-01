@@ -138,19 +138,22 @@
       gallery: '#gallery',
     }
 
-
     //public method
     return{
-    imageGalleryLayout: function(data){
-        let html = '';
+    imageGalleryLayout: function(){
+        let html = 'TEST HTML DATA';
+        /*
           data.forEach(function(item){
+        
           html += `
                   <div id="${item.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
                     <img class="img-fluid" src="${item.field_website_gallery_image}" alt="Card image cap">
-                  </div>`;
+                  </div>
+                  `;
           document.querySelector(uiSelectors.gallery).innerHTML = html;
-          })
-          console.log('HTML: ',html);
+        });
+        */
+        console.log('HTML: ',html);
     },
     getSlectors: function(){
         return uiSelectors;
@@ -175,8 +178,8 @@
       });
     }
 
-    console.log('IMAGE IN STATE :',itemCntr.getImageData());
-    console.log('GALLERY TYPE : ',itemCntr.getGalleryType());
+    console.log('IMAGE IN STATE :', itemCntr.getImageData());
+    console.log('GALLERY TYPE : ',  itemCntr.getGalleryType());
 
     //public method
     return {
