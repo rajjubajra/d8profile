@@ -138,14 +138,13 @@
     return{
     imageGalleryLayout: function(data){
         let html = '';
-          data.map((item)=>{
-            html += `
+          data.forEach(function(item){
+          html += `
                   <div id="${item.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
                     <img class="img-fluid" src="${item.field_website_gallery_image}" alt="Card image cap">
                   </div>`;
-          });
           document.querySelector(uiSelectors.gallery).innerHTML = html;
-          
+          })
     },
     getSlectors: function(){
         return uiSelectors;
