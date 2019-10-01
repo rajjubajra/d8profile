@@ -105,10 +105,15 @@
                 })
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
+                    jsonData.forEach(function(itemjson){
+                      console.log(itemjson);
+                    })
+                    /*
                     jsonData.map((item)=>{
                       let newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
                       state.imageData.push(newItem);
                     })
+                    */
                 })
                 .catch((err)=>{ 
                   console.log('Error', err.message);
