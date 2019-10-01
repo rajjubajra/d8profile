@@ -108,7 +108,7 @@
                     console.log('jsonData : ',jsonData);
 
                     jsonData.forEach(function(item){
-                      newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
+                      let newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
                       state.imageData.push(newItem);
                     })
                     
