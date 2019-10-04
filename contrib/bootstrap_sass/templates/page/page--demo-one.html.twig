@@ -106,8 +106,8 @@
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
                     jsonData.forEach(function(itemjson){
-                      console.log(itemjson);
-                      state.imageData.push(itemjson);
+                      console.log(itemjson.itemjson);
+                      state.imageData.push(itemjson.itemjson);
                     })
                     /*
                     jsonData.map((item)=>{
