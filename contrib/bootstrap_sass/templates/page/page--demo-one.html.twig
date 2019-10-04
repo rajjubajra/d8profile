@@ -105,7 +105,6 @@
                 })
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
-                   
                     jsonData.map((item)=>{
                       let newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
                       state.imageData.push(newItem);
@@ -182,8 +181,8 @@
       init: function(){
         console.log('initalizing....???');
         let data = itemCntr.getImageData();
-        console.log(data);
-        uiCntr.imageGalleryLayout(data);
+        console.log('DATA',data.items);
+        uiCntr.imageGalleryLayout(data.items);
         //load event listener function
         //loadEvenetListener();
       }
