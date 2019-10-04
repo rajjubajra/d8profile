@@ -74,7 +74,14 @@
 
     //data structure 
     const state = {
-        imageData:[],
+        imageData:[
+          {
+            title: "Photography Image",  
+            body: "",
+            field_website_gallery_image: "/profile/sites/default/files/2019-10/film-147137_640.png",
+            field_website_gallery_taxonomy: "Photography"
+          },
+        ],
         galleryType: ''
     }
 
@@ -182,9 +189,8 @@
         console.log('initalizing....???');
         let data = itemCntr.getImageData();
         console.log('data', data);
-        console.log('items: ',data.items);
-        console.log('data.data ',data.data);
-        //uiCntr.imageGalleryLayout(data.items);
+
+        uiCntr.imageGalleryLayout(data.items);
         //load event listener function
         //loadEvenetListener();
       }
