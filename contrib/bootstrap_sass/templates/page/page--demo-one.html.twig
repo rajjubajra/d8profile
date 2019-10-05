@@ -113,8 +113,13 @@
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
                     jsonData.map((item)=>{
-                      let newItem = new items(item.title, item.body, item.field_website_gallery_image, item.field_website_gallery_taxonomy);
-                      state.imageData.push(newItem);
+                      let newItem = new items(
+                        item.title, 
+                        item.body, 
+                        item.field_website_gallery_image, 
+                        item.field_website_gallery_taxonomy
+                        );
+                      return state.imageData.push(newItem);
                     })
                     
                 })
@@ -149,6 +154,9 @@
     imageGalleryLayout: function(data){
         let html = '';
           data.forEach(function(item){
+            const div = document.createElement('div');
+            div.classList.add("mb-3 pics animation all");
+            
           html += `
                   <div id="${item.taxonomy}" class="mb-3 pics animation all">
                     <img class="img-fluid" src="${item.image}" alt="Card image cap">
