@@ -171,7 +171,7 @@
       init: function(){
         console.log('initalizing....???');
         itemCntr.addImageData()
-        .then(response => console.log(response))
+        .then(jsonData => console.log('data',jsonData))
         .catch(err=> console.log(err));
         
         //load event listener function
