@@ -74,25 +74,14 @@
 
     //data structure 
     const state = {
-        imageData:[
-          {
-            title: "Photography Image",  
-            body: "",
-            image: "/profile/sites/default/files/2019-10/film-147137_640.png",
-            taxonomy: "Photography"
-          },
-        ],
         galleryType: ''
     }
 
-    const items = function(title, body, image, taxonomy){
-      this.title = title;
-      this.body = body;
-      this.image = image;
-      this.taxonomy = taxonomy;
-    }
-
-    const addImageData =  function(){
+        
+    //public 
+    return{
+    //add images
+    addImageData:  function(){
 
       const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
           let h = new Headers();
@@ -112,33 +101,17 @@
                 })
                 .then((jsonData)=>{
                     console.log('jsonData : ',jsonData);
-                    jsonData.map((item)=>{
-                      let newItem = new items(
-                        item.title, 
-                        item.body, 
-                        item.field_website_gallery_image, 
-                        item.field_website_gallery_taxonomy
-                        );
-                      return state.imageData.push(newItem);
-                    })
-                    
+                    jsonData;
                 })
                 .catch((err)=>{ 
                   console.log('Error', err.message);
                 });
-        }// getImages closed
-        addImageData();
-        
-
-    //public 
-      return{
-        getImageData: function(){
-          return state.imageData;
-        },
+        },// getImages closed
         getGalleryType: function(){
           return state.galleryType;
         }
-      }    
+      }  
+
   })();
 
 
@@ -195,10 +168,10 @@
     return {
       init: function(){
         console.log('initalizing....???');
-        let data = itemCntr.getImageData();
-        console.log('data', data);
-
-        uiCntr.imageGalleryLayout(data.items);
+        itemCntr.addImageData()
+        .then(response => console.log(response))
+        .catch(err=> console.log(err));
+        
         //load event listener function
         //loadEvenetListener();
       }
@@ -206,8 +179,6 @@
   })(itemCntr, uiCntr);
   //initialize app
   app.init();
-
-
 
 
 
