@@ -70,6 +70,10 @@
 <script>
 
 /* ITEM CONTROLLER *******************************************/ 
+
+
+
+
   const itemCntr = (function(){
 
     //data structure 
@@ -91,7 +95,7 @@
             headers: h,
             mode: 'cors'
           })    
-          fetch(req)
+          return fetch(req)
                 .then((response) => {
                   if(response.ok){
                     return response.json();
