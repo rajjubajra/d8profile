@@ -50,7 +50,7 @@
   <div class="container">
     <!-- Gallery nav buttons  -->       
     <div class="menu-verticle">
-        <div class="col-md-12 d-flex justify-content-center mb-5"></div>
+        <div id="menu-gallery" class="col-md-12 d-flex justify-content-center mb-5"></div>
     </div>
     <!-- Gallery column -->     
     <div class="gallery" id="gallery"></div>
@@ -78,38 +78,43 @@
 
     //data structure 
     const state = {
-        gallery: '#gallery',
-        galleryType: ''
+        uiGallery: '#gallery',
+        menuGallery: '#menu-gallery'
     }
 
-        
+
+    /** VIEW IMAGE GALLERY FUNCTION **/
+    function viewImageData(uri){
+      let h = new Headers();
+      h.append('Accept', 'application/vnd.api+json');
+      let req = new Request(uri, {
+        method: 'GET',
+        headers: h,
+        mode: 'cors'
+      })    
+      return fetch(req)
+            .then((response) => {
+              if(response.ok){
+                return response.json();
+              }else{
+                throw new Error('BAD HTTP stuff');
+              }
+            })
+            .then( data => data.map(data => data))
+            .catch((err)=>{ console.log('Error', err.message);});
+    }// getImages closed
+    
+
+    
     //public 
     return{
-    //add images
-    addImageData:  function(uri){
-
-          let h = new Headers();
-          h.append('Accept', 'application/vnd.api+json');
-          let req = new Request(uri, {
-            method: 'GET',
-            headers: h,
-            mode: 'cors'
-          })    
-          return fetch(req)
-                .then((response) => {
-                  if(response.ok){
-                    return response.json();
-                  }else{
-                    throw new Error('BAD HTTP stuff');
-                  }
-                })
-                .then( data => data.map(data => data))
-                .catch((err)=>{ console.log('Error', err.message);});
-        },// getImages closed
-        stateValue: function(){
-          return state
-        }
-      }  
+      viewImageData: function(uri){
+        return viewImageData(uri);
+      },
+      stateValue: function(){
+        return state
+      }
+    }// return closed   
 
   })();
 
@@ -165,24 +170,22 @@
     return {
       init: function(){
         console.log('initalizing....???');
+
+        /** IMAGE GALLERY **/
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-        itemCntr.addImageData(uriImages)
+        itemCntr.viewImageData(uriImages)
         .then(jsonData => {
           console.log('data',jsonData);
           let output = '';
           jsonData.forEach(function(img){
-
-            output += `<div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
-              <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
+            output += `
+            <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+            <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
             </div>`
-
           });
-          console.log(output);
-          console.log(itemCntr.stateValue());
-          document.querySelector(itemCntr.stateValue().gallery).innerHTML = output;
-
+          document.querySelector(itemCntr.stateValue().uiGallery).innerHTML = output;
         })
-        .catch(err=> console.log(err));
+        
         
         //load event listener function
         //loadEvenetListener();
