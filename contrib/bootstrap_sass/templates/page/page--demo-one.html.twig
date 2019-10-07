@@ -82,9 +82,8 @@
         menuGallery: '#menu-gallery'
     }
 
-
-    /** VIEW IMAGE GALLERY FUNCTION **/
-    function viewImageData(uri){
+    /** FETCH REST API FUNCTION **/
+    function fetchRestAPI(uri){
       let h = new Headers();
       h.append('Accept', 'application/vnd.api+json');
       let req = new Request(uri, {
@@ -108,8 +107,8 @@
     
     //public 
     return{
-      viewImageData: function(uri){
-        return viewImageData(uri);
+      fetchRestAPI: function(uri){
+        return fetchRestAPI(uri);
       },
       stateValue: function(){
         return state
@@ -173,7 +172,7 @@
 
         /** IMAGE GALLERY **/
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-        itemCntr.viewImageData(uriImages)
+        itemCntr.fetchRestAPI(uriImages)
         .then(jsonData => {
           console.log('data',jsonData);
           let output = '';
