@@ -85,12 +85,11 @@
     //public 
     return{
     //add images
-    addImageData:  function(){
+    addImageData:  function(uri){
 
-      const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
           let h = new Headers();
           h.append('Accept', 'application/vnd.api+json');
-          let req = new Request(uriImages, {
+          let req = new Request(uri, {
             method: 'GET',
             headers: h,
             mode: 'cors'
@@ -103,13 +102,8 @@
                     throw new Error('BAD HTTP stuff');
                   }
                 })
-                .then((jsonData)=>{
-                    console.log('jsonData : ',jsonData);
-                    jsonData;
-                })
-                .catch((err)=>{ 
-                  console.log('Error', err.message);
-                });
+                .then( data => data.map(data => data))
+                .catch((err)=>{ console.log('Error', err.message);});
         },// getImages closed
         getGalleryType: function(){
           return state.galleryType;
@@ -170,7 +164,8 @@
     return {
       init: function(){
         console.log('initalizing....???');
-        itemCntr.addImageData()
+        const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
+        itemCntr.addImageData(uriImages)
         .then(jsonData => console.log('data',jsonData))
         .catch(err=> console.log(err));
         
