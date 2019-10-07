@@ -187,8 +187,8 @@
         /** GALLERY MENU **/
         const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json;`;
         itemCntr.fetchRestAPI(uriGalleryMenu)
-        .then(jsonData => {
-          console.log('menu', jsonData);
+        .then(response => {
+          console.log('menu', response);
         })
         
         
