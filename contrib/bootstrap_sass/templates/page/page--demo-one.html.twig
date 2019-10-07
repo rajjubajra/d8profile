@@ -76,10 +76,9 @@
 
   const itemCntr = (function(){
 
-    //data structure 
+    /** DATA STRUCTURE **/ 
     const state = {
-        uiGallery: '#gallery',
-        menuGallery: '#menu-gallery'
+        galleryType = ''
     }
 
     /** FETCH REST API FUNCTION **/
@@ -102,10 +101,9 @@
             .then( data => data.map(data => data))
             .catch((err)=>{ console.log('Error', err.message);});
     }// getImages closed
-    
-
-    
-    //public 
+        
+  
+    /** PUBLIC FUNCTION **/
     return{
       fetchRestAPI: function(uri){
         return fetchRestAPI(uri);
@@ -122,7 +120,8 @@
   const uiCntr = (function(){
 
     const uiSelectors = {
-      gallery: '#gallery',
+      uiGallery: '#gallery',
+      menuGallery: '#menu-gallery'
     }
 
     //public method
@@ -182,7 +181,7 @@
             <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
             </div>`
           });
-          document.querySelector(itemCntr.stateValue().uiGallery).innerHTML = output;
+          document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = output;
         })
         /** GALLERY MENU **/
         const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
@@ -196,7 +195,7 @@
               ${item.name}
             </button>`;
           });
-          document.querySelector(itemCntr.stateValue().menuGallery).innerHTML = buttons;
+          document.querySelector(uiCntr.getSlectors().menuGallery).innerHTML = buttons;
         })
         
         
