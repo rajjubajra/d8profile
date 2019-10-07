@@ -290,12 +290,14 @@ DEMO PAGE ONE -FRONT PAGE
     -webkit-column-width: 33%;
     -moz-column-width: 33%;
     column-width: 33%;
-         img{
+        img{
             max-width: 100%;
             height: auto;
             box-shadow: 1px 1px 6px 2px #d4d3d3;
             border: 1px solid #fff;
-         } 
+            outline: 1px solid #e6e3e3;
+            outline-offset: -10px;
+        } 
     }
 
     .gallery .pics {
