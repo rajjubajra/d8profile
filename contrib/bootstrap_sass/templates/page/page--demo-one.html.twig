@@ -184,6 +184,12 @@
           });
           document.querySelector(itemCntr.stateValue().uiGallery).innerHTML = output;
         })
+        /** GALLERY MENU **/
+        const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json;`;
+        itemCntr.fetchRestAPI(uriGalleryMenu)
+        .then(jsonData => {
+          console.log('menu', jsonData);
+        })
         
         
         //load event listener function
