@@ -284,11 +284,11 @@ DEMO PAGE ONE -FRONT PAGE
 
 
     .gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
+    
+    @media(min-width: 576px){ column-count: 1}
+    @media(min-width: 768px){ column-count: 2}
+    @media(min-width: 992px){ column-count: 3}
+    @media(min-width: 1200px){ column-count: 4}    
     column-width: 33%;
         img{
             max-width: 100%;
@@ -297,6 +297,7 @@ DEMO PAGE ONE -FRONT PAGE
             border: 1px solid #fff;
             outline: 1px solid #e6e3e3;
             outline-offset: -10px;
+            break-inside: avoid-column; //column break within element
         } 
     }
 
