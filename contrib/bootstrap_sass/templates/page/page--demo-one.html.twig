@@ -189,6 +189,14 @@
         itemCntr.fetchRestAPI(uriGalleryMenu)
         .then(response => {
           console.log('menu', response);
+          let button = '';
+          response.map((item)=>{
+            buttons += `
+            <button id="${item.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
+              ${item.name}
+            </button>`;
+          });
+          document.querySelector(itemCntr.stateValue().menuGallery).innerHTML = button;
         })
         
         
