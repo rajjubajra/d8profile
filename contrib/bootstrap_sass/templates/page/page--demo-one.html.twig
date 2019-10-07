@@ -178,7 +178,8 @@
 
           });
           console.log(output);
-          document.querySelector(itemCntr.stateValue.gallery).innerHTML = 'test text';
+          console.log(itemCntr.stateValue);
+          document.querySelector(itemCntr.stateValue.state.gallery).innerHTML = output;
 
         })
         .catch(err=> console.log(err));
