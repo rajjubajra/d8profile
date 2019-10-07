@@ -78,6 +78,7 @@
 
     //data structure 
     const state = {
+        gallery: '#gallery',
         galleryType: ''
     }
 
@@ -105,8 +106,8 @@
                 .then( data => data.map(data => data))
                 .catch((err)=>{ console.log('Error', err.message);});
         },// getImages closed
-        getGalleryType: function(){
-          return state.galleryType;
+        stateValue: function(){
+          return state
         }
       }  
 
@@ -166,7 +167,19 @@
         console.log('initalizing....???');
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
         itemCntr.addImageData(uriImages)
-        .then(jsonData => console.log('data',jsonData))
+        .then(jsonData => {
+          console.log('data',jsonData);
+          let output = '';
+          jsonData.forEach(function(img){
+
+            output += `<div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+              <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
+            </div>`
+
+          });
+          document.querySelector(itemCntr.stateValue.gallery).innerHTML = output;
+
+        })
         .catch(err=> console.log(err));
         
         //load event listener function
