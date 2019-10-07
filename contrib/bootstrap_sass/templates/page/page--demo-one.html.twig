@@ -185,7 +185,7 @@
           document.querySelector(itemCntr.stateValue().uiGallery).innerHTML = output;
         })
         /** GALLERY MENU **/
-        const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json;`;
+        const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
         itemCntr.fetchRestAPI(uriGalleryMenu)
         .then(response => {
           console.log('menu', response);
