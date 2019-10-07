@@ -179,7 +179,7 @@
           });
           console.log(output);
           console.log(itemCntr.stateValue());
-          document.querySelector(itemCntr.stateValue.state.gallery).innerHTML = output;
+          document.querySelector(itemCntr.stateValue().gallery).innerHTML = output;
 
         })
         .catch(err=> console.log(err));
