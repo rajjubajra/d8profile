@@ -163,7 +163,7 @@
             <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
             </div>`
           });
-          if(!empty(output)){
+          if(output.length < 1){
             document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = output;
           }else{
             document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = `<div class="loading"><i class="fas fa-circle-notch fa-spin"></i></div>`;
