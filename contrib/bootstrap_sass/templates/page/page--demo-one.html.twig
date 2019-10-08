@@ -74,11 +74,11 @@
 
     /** DATA STRUCTURE **/ 
     const state = {
-        galleryType: 'All'
+        galleryBtn: []
     }
 
     /** FETCH REST API FUNCTION **/
-    function fetchRestAPI(uri){
+    function fetchRestAPI(uri, state){
       let h = new Headers();
       h.append('Accept', 'application/vnd.api+json');
       let req = new Request(uri, {
@@ -183,9 +183,12 @@
         
 /** GALLERY MENU **/
         const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
-        itemCntr.fetchRestAPI(uriGalleryMenu)
+        const galleryBtn = 'galleryBtn';
+        itemCntr.fetchRestAPI(uriGalleryMenu, galleryBtn)
         .then(response => {
           console.log('menu', response);
+          galleryBtn.push(response);
+          console.log('btn array ',uiCntr.stateValue().galleryBtn);
           let buttons = '';
           response.map((item)=>{
             buttons += `
