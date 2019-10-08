@@ -143,10 +143,12 @@
         uiCntr.galleryType = imgId;
         //return imgId;
         console.log('clicked id ',imgId);
-        const showHideItem = document.querySelector(uiCntr.getSlectors().uiGallery);
-        showHideItem.classList.add('show');
-        console.log('showhid item',showHideItem);
-       
+        const showHideItem = document.getElementById(imgId);
+        const pics = document.querySelectorAll('.pics');
+        console.log(pics);
+        
+        
+      
       });
     }
 
