@@ -146,7 +146,9 @@
         const showHideItem = document.getElementById(imgId);
         const pics = document.querySelectorAll('.pics');
         console.log(pics);
+      
         pics.forEach((item)=>{
+          item.classList.remove('hide');
           if(item.id !== imgId){
             item.classList.add('hide');
           }
