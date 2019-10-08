@@ -163,7 +163,13 @@
             <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
             </div>`
           });
-          document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = output;
+          if(!empty(output)){
+            document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = output;
+          }else{
+            document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = `<div class="loading"><i class="fas fa-circle-notch fa-spin"></i></div>`;
+          }
+
+          
         })
         
 /** GALLERY MENU **/
