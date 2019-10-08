@@ -165,7 +165,7 @@
       init: function(){
         console.log('initalizing....???');
 
-       
+      
 
 /** IMAGE GALLERY **/
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
@@ -175,7 +175,7 @@
           let output = '';
           jsonData.forEach(function(img){
             output += `
-            <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
+            <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation">
             <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
             </div>`
           });
