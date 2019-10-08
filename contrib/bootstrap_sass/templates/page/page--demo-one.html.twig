@@ -151,7 +151,7 @@
 
           item.classList.remove('hide');
         
-          item.id !== imgId  && item.id !== 'All' ? item.classList.add('hide') : item.classList.remove('hide')
+          item.id !== imgId  || item.id !== 'All' ? item.classList.add('hide') : item.classList.remove('hide')
           
 
         })
