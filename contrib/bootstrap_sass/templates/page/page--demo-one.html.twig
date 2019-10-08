@@ -147,7 +147,9 @@
         const pics = document.querySelectorAll('.pics');
         console.log(pics);
         pics.forEach((item)=>{
-          console.log('ids: ',item.id);
+          if(item.id !== imgId){
+            item.classList.add('hide');
+          }
         })
         
         
