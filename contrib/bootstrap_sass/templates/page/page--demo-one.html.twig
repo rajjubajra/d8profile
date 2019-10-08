@@ -70,10 +70,6 @@
 <script>
 
 /* ITEM CONTROLLER *******************************************/ 
-
-
-
-
   const itemCntr = (function(){
 
     /** DATA STRUCTURE **/ 
@@ -124,23 +120,10 @@
       menuGallery: '#menu-gallery'
     }
 
+
+
     //public method
     return{
-    imageGalleryLayout: function(data){
-        let html = '';
-          data.forEach(function(item){
-            const div = document.createElement('div');
-            div.classList.add("mb-3 pics animation all");
-            
-          html += `
-                  <div id="${item.taxonomy}" class="mb-3 pics animation all">
-                    <img class="img-fluid" src="${item.image}" alt="Card image cap">
-                  </div>
-                  `;
-        });
-        document.querySelector(uiSelectors.gallery).innerHTML = html;
-        console.log('HTML: ',html + ' | ' + data);
-    },
     getSlectors: function(){
         return uiSelectors;
       }
@@ -169,7 +152,7 @@
       init: function(){
         console.log('initalizing....???');
 
-        /** IMAGE GALLERY **/
+/** IMAGE GALLERY **/
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
         itemCntr.fetchRestAPI(uriImages)
         .then(jsonData => {
@@ -183,7 +166,8 @@
           });
           document.querySelector(uiCntr.getSlectors().uiGallery).innerHTML = output;
         })
-        /** GALLERY MENU **/
+        
+/** GALLERY MENU **/
         const uriGalleryMenu = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
         itemCntr.fetchRestAPI(uriGalleryMenu)
         .then(response => {
@@ -200,7 +184,7 @@
         
         
         //load event listener function
-        //loadEvenetListener();
+        loadEvenetListener();
       }
     }
   })(itemCntr, uiCntr);
