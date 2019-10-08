@@ -134,7 +134,7 @@
 /* APP *******************************************/ 
   const app = (function(itemCntr, uiCntr){
 
-    const loadEvenetListener = function(menuBtn){
+    const loadEvenetListener = function(){
       //get ui Selector 
       const uiSelector = uiCntr.getSlectors();
 
@@ -200,7 +200,7 @@
         
         
         //load event listener function
-        loadEvenetListener(menuBtn);
+        loadEvenetListener();
       }
     }
   })(itemCntr, uiCntr);
