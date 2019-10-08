@@ -150,12 +150,12 @@
 
         pics.forEach((item)=>{
 
-          menuBtn.fine(item.id) ? '' : item.classList.remove('hide');
-
           item.classList.remove('hide');
 
           if(item.id !== imgId){
             item.classList.add('hide');
+          }else{
+            item.classList.remove('hide');
           }
         })
 
@@ -190,7 +190,6 @@
         itemCntr.fetchRestAPI(uriGalleryMenu)
         .then(response => {
           console.log('menu', response);
-          const menuBtn = response;
           let buttons = '';
           response.map((item)=>{
             buttons += `
