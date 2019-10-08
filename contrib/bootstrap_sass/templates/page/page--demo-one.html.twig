@@ -139,25 +139,6 @@
       //get ui Selector 
       const uiSelector = uiCntr.getSlectors();
 
-      document.addEventListener('click', function(e){
-        let imgId = e.target.id;
-        uiCntr.galleryType = imgId;
-        //return imgId;
-        console.log('clicked id ',imgId);
-       // const showHideItem = document.getElementById(imgId);
-        const pics = document.querySelectorAll('.pics');
-      
-        pics.forEach((item)=>{
-
-          if(item === imgId){
-            imgId === 'All'  ? item.classList.remove('hide') 
-            : item.id !== imgId ? item.classList.add('hide') : item.classList.remove('hide');
-          }
-        
-        })
-
-      });
-    }
 
 
     //public method
