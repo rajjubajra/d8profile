@@ -134,7 +134,7 @@
 /* APP *******************************************/ 
   const app = (function(itemCntr, uiCntr){
 
-    const loadEvenetListener = function(){
+    const loadEvenetListener = function(menuBtn){
       //get ui Selector 
       const uiSelector = uiCntr.getSlectors();
 
@@ -145,17 +145,20 @@
         console.log('clicked id ',imgId);
         const showHideItem = document.getElementById(imgId);
         const pics = document.querySelectorAll('.pics');
-        console.log(pics);
       
+        console.log('menuBTn',menuBtn);
+
         pics.forEach((item)=>{
+
+          menuBtn.fine(item.id) ? '' : item.classList.remove('hide');
+
           item.classList.remove('hide');
+
           if(item.id !== imgId){
             item.classList.add('hide');
           }
         })
-        
-        
-      
+
       });
     }
 
@@ -187,6 +190,7 @@
         itemCntr.fetchRestAPI(uriGalleryMenu)
         .then(response => {
           console.log('menu', response);
+          const menuBtn = response;
           let buttons = '';
           response.map((item)=>{
             buttons += `
@@ -199,117 +203,12 @@
         
         
         //load event listener function
-        loadEvenetListener();
+        loadEvenetListener(menuBtn);
       }
     }
   })(itemCntr, uiCntr);
   //initialize app
   app.init();
 
-
-
-/** GET BUTTONS *
-const uiBottons = document.querySelector('.justify-content-center');
-//console.log('button placeholder', uiBottons);
-const uriButtons = `https://www.yellow-website.com/profile/rest/website-taxonomy?_format=json`;
-function getTaxonomyButtons(uri){
-
-    let h = new Headers();
-    h.append('Accept', 'application/vnd.api+json');
-    let req = new Request(uri, {
-      method: 'GET',
-      headers: h,
-      mode: 'cors'
-    })
-
-    fetch(req)
-          .then((response) => {
-            if(response.ok){
-              return response.json();
-            }else{
-              throw new Error('BAD HTTP stuff');
-            }
-          })
-          .then((jsonData)=>{
-
-              let buttons = '';
-
-              console.log(jsonData);
-              jsonData.map((item)=>{
-                  buttons += ` <button id="${item.name}" type="button"  class="btn btn-outline-black waves-effect filter" data-rel="1">
-                      ${item.name}
-                    </button>`;
-              });
-              uiBottons.innerHTML = buttons;
-                    
-          })
-          .catch((err)=>{ 
-            console.log('Error', err.message);
-          });
-
-}// getTaxonomyButtons closed
-getTaxonomyButtons(uriButtons);
-
-/** GET IMAGES *
-const uiImages = document.querySelector('#gallery');
-//console.log(uiImages);
-
-const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
-
-function getImages(uri){
-
-  let h = new Headers();
-  h.append('Accept', 'application/vnd.api+json');
-  let req = new Request(uri, {
-    method: 'GET',
-    headers: h,
-    mode: 'cors'
-  })
-
-  fetch(req)
-        .then((response) => {
-          if(response.ok){
-            return response.json();
-          }else{
-            throw new Error('BAD HTTP stuff');
-          }
-        })
-        .then((jsonData)=>{
-            console.log(jsonData);
-            let imgData = '';   
-            jsonData.map((img)=>{
-              imgData += `
-                <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation all">
-                  <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
-                </div>`  
-            })
-            uiImages.innerHTML = imgData;
-        })
-        .catch((err)=>{ 
-          console.log('Error', err.message);
-        });
-
-
-}// getImages closed
-getImages(uriImages);
-
- /** BUTTON *
-function showHide(items){
-  console.log('item clicked', items.target.attributes.id.nodeValue);
-  const btnClicked = items.target.attributes.id.nodeValue;
-    arrPics.forEach(function(item){
-      console.log(item);
-      if(item.id !== btnClicked){
-        item.classList.add('hide');
-      }
-      if(item.id === btnClicked){
-        item.classList.remove('hide');
-      }
-      if(btnClicked === 'all'){
-        item.classList.remove('hide');
-      }
-    })
-}
-*/
 
 </script>
