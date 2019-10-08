@@ -134,6 +134,7 @@
 /* APP *******************************************/ 
   const app = (function(itemCntr, uiCntr){
 
+/** ALL EVENT LISTENER FUNCTION **/    
     const loadEvenetListener = function(){
       //get ui Selector 
       const uiSelector = uiCntr.getSlectors();
@@ -143,18 +144,16 @@
         uiCntr.galleryType = imgId;
         //return imgId;
         console.log('clicked id ',imgId);
-        const showHideItem = document.getElementById(imgId);
+       // const showHideItem = document.getElementById(imgId);
         const pics = document.querySelectorAll('.pics');
       
         pics.forEach((item)=>{
 
           item.classList.remove('hide');
+        
+          item.id !== imgId  && item.id !== 'All' ? item.classList.add('hide') : item.classList.remove('hide')
+          
 
-          if(item.id !== imgId){
-            item.classList.add('hide');
-          }else{
-            item.classList.remove('hide');
-          }
         })
 
       });
