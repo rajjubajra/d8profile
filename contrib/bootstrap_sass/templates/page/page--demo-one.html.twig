@@ -143,6 +143,9 @@
         uiCntr.galleryType = imgId;
         //return imgId;
         console.log(imgId);
+        const showHideItem = document.querySelector(uiCntr.getSlectors().uiGallery);
+        console.log('showhid item',showHideItem);
+        console.log('stat gal: ',itemCntr.stateValue().galleryType);
       });
     }
 
@@ -152,7 +155,7 @@
       init: function(){
         console.log('initalizing....???');
 
-        console.log('stat gal: ',itemCntr.stateValue().galleryType);
+       
 
 /** IMAGE GALLERY **/
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
