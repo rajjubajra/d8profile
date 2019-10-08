@@ -150,8 +150,7 @@
         pics.forEach((item)=>{
 
           item.classList.remove('hide');
-        
-          item.id === 'All'  ? item.classList.remove('hide') 
+          imgId === 'All'  ? item.classList.remove('hide') 
           : item.id !== imgId ? item.classList.add('hide') : item.classList.remove('hide');
           
         })
