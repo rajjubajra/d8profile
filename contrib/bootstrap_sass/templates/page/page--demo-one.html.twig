@@ -74,7 +74,7 @@
 
     /** DATA STRUCTURE **/ 
     const state = {
-        galleryType: ''
+        galleryType: 'All'
     }
 
     /** FETCH REST API FUNCTION **/
@@ -151,6 +151,8 @@
     return {
       init: function(){
         console.log('initalizing....???');
+
+        console.log('stat gal: ',itemCntr.stateValue().galleryType);
 
 /** IMAGE GALLERY **/
         const uriImages = `https://www.yellow-website.com/profile/rest/website-gallery?_format=json`;
