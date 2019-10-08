@@ -187,8 +187,6 @@
         itemCntr.fetchRestAPI(uriGalleryMenu, galleryBtn)
         .then(response => {
           console.log('menu', response);
-          galleryBtn.push(response);
-          console.log('btn array ',uiCntr.stateValue().galleryBtn);
           let buttons = '';
           response.map((item)=>{
             buttons += `
