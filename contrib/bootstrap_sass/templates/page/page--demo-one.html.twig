@@ -148,10 +148,9 @@
         const pics = document.querySelectorAll('.pics');
       
         pics.forEach((item)=>{
-
-          item.classList.remove('hide');
+          console.log(item.item.id);
           imgId === 'All'  ? item.classList.remove('hide') 
-          : item.id !== imgId ? item.classList.add('hide') : item.classList.remove('hide');
+          : item.id === imgId ? item.classList.add('hide') : item.classList.remove('hide');
           
         })
 
@@ -174,7 +173,7 @@
           let output = '';
           jsonData.forEach(function(img){
             output += `
-            <div id="${img.field_website_gallery_taxonomy}" class="mb-3 pics animation">
+            <div id="${img.field_website_gallery_taxonomy}" class="show mb-3 pics animation">
             <img class="img-fluid" src="${img.field_website_gallery_image}" alt="Card image cap">
             </div>`
           });
